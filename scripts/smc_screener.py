@@ -1,7 +1,7 @@
 """
-SMC Discount Zone Screener
-Replica la lógica de LuxAlgo Smart Money Concepts
-Corre en GitHub Actions y guarda resultados como CSV
+SMC Discount Zone Screener v2
+Replica logica LuxAlgo Smart Money Concepts con zonas ampliadas.
+Calibrado usando BAX como referencia.
 """
 
 import yfinance as yf
@@ -15,15 +15,18 @@ from datetime import datetime
 warnings.filterwarnings('ignore')
 
 # ============================================================
-# PARÁMETROS
+# PARAMETROS
 # ============================================================
-SWING_LENGTH  = 50
-DATA_PERIOD   = '1y'
-BATCH_SIZE    = 10
-SLEEP_BETWEEN = 1.0
+SWING_LENGTH      = 20     # Ventana swings (20=ciclos cortos, 50=largos)
+DATA_PERIOD       = '1y'   # Periodo datos: '6mo', '1y', '2y'
+BATCH_SIZE        = 10
+SLEEP_BETWEEN     = 1.0
+DISCOUNT_PCT      = 0.25   # Discount: 25% inferior del rango total
+NEAR_DISCOUNT_PCT = 0.38   # Near discount: hasta 38% (captura rebotes)
+PREMIUM_PCT       = 0.75   # Premium: por encima del 75% del rango
 
 # ============================================================
-# TICKERS — S&P 500 + NASDAQ 100
+# TICKERS S&P 500 + NASDAQ 100
 # ============================================================
 SP500 = [
     'MMM','AOS','ABT','ABBV','ACN','ADBE','AMD','AES','AFL','A','APD','ABNB','AKAM','ALB',
@@ -32,14 +35,14 @@ SP500 = [
     'APTV','ACGL','ADM','ANET','AJG','AIZ','T','ATO','ADSK','ADP','AZO','AVB','AVY',
     'AXON','BKR','BALL','BAC','BK','BBWI','BAX','BDX','BBY','BIO','BIIB','BLK','BX',
     'BA','BSX','BMY','AVGO','BR','BRO','BG','CDNS','CPT','CPB','COF','CAH','KMX','CCL',
-    'CARR','CAT','CBOE','CBRE','CDW','CE','COR','CNC','CDAY','CF','CRL','SCHW','CHTR',
+    'CARR','CAT','CBOE','CBRE','CDW','CE','COR','CNC','CF','CRL','SCHW','CHTR',
     'CVX','CMG','CB','CHD','CI','CINF','CTAS','CSCO','C','CFG','CLX','CME','CMS','KO',
     'CTSH','CL','CMCSA','CAG','COP','ED','STZ','CEG','COO','CPRT','GLW','CTVA','CSGP',
     'COST','CTRA','CCI','CSX','CMI','CVS','DHI','DHR','DRI','DVA','DE','DAL','DVN',
-    'DXCM','FANG','DLR','DFS','DG','DLTR','D','DPZ','DOV','DOW','DTE','DUK','DD',
+    'DXCM','FANG','DLR','DG','DLTR','D','DPZ','DOV','DOW','DTE','DUK','DD',
     'EMN','ETN','EBAY','ECL','EIX','EW','EA','ELV','LLY','EMR','ENPH','ETR','EOG',
     'EQT','EFX','EQIX','EQR','ESS','EL','ETSY','EG','EVRG','ES','EXC','EXPE','EXPD',
-    'EXR','XOM','FFIV','FDS','FICO','FAST','FRT','FDX','FIS','FITB','FSLR','FE','FI',
+    'EXR','XOM','FFIV','FDS','FICO','FAST','FRT','FDX','FIS','FITB','FSLR','FE',
     'FMC','F','FTNT','FTV','BEN','FCX','GRMN','IT','GE','GEHC','GEN','GNRC','GD','GIS',
     'GM','GPC','GILD','GPN','GL','GDDY','GS','HAL','HIG','HAS','HCA','HSIC','HSY','HES',
     'HPE','HLT','HOLX','HD','HON','HRL','HST','HWM','HPQ','HUBB','HUM','HBAN','HII',
@@ -77,56 +80,59 @@ NASDAQ100 = [
 ALL_TICKERS = sorted(list(set(SP500 + NASDAQ100)))
 
 # ============================================================
-# FUNCIONES SMC — replica lógica LuxAlgo
+# FUNCIONES SMC
 # ============================================================
 
 def calculate_rsi(series, period=14):
     delta    = series.diff()
     gain     = delta.clip(lower=0)
     loss     = -delta.clip(upper=0)
-    avg_gain = gain.ewm(com=period - 1, min_periods=period).mean()
-    avg_loss = loss.ewm(com=period - 1, min_periods=period).mean()
+    avg_gain = gain.ewm(com=period-1, min_periods=period).mean()
+    avg_loss = loss.ewm(com=period-1, min_periods=period).mean()
     rs       = avg_gain / avg_loss
     return 100 - (100 / (1 + rs))
 
 
-def find_swing_points(high, low, length=50):
-    """Replica función leg() de LuxAlgo"""
+def find_swing_points(high, low, length):
     swing_highs, swing_lows = [], []
     n = len(high)
     for i in range(length, n):
-        window_high = high[i-length:i]
-        window_low  = low[i-length:i]
-        if high[i-length] == max(window_high):
+        if high[i-length] == max(high[i-length:i]):
             swing_highs.append((i-length, high[i-length]))
-        if low[i-length] == min(window_low):
+        if low[i-length] == min(low[i-length:i]):
             swing_lows.append((i-length, low[i-length]))
     return swing_highs, swing_lows
 
 
-def get_trailing_extremes(high_arr, low_arr, length=50):
-    """Replica trailing.top y trailing.bottom de LuxAlgo"""
+def get_trailing_extremes(high_arr, low_arr, length):
     swing_highs, swing_lows = find_swing_points(high_arr, low_arr, length)
     if not swing_highs or not swing_lows:
         return None, None
-    trailing_top    = max(v for _, v in swing_highs[-5:])
-    trailing_bottom = min(v for _, v in swing_lows[-5:])
-    return trailing_top, trailing_bottom
+    top    = max(v for _, v in swing_highs[-5:])
+    bottom = min(v for _, v in swing_lows[-5:])
+    return top, bottom
 
 
 def calculate_zones(top, bottom):
-    """
-    Replica exacta de drawPremiumDiscountZones() de LuxAlgo:
-      Premium:     0.95*T + 0.05*B  →  T
-      Equilibrium: 0.525*B + 0.475*T → 0.525*T + 0.475*B
-      Discount:    B  →  0.95*B + 0.05*T
-    """
-    T, B = top, bottom
+    rango = top - bottom
     return {
-        'premium':     (0.95*T + 0.05*B,  T),
-        'equilibrium': (0.525*B + 0.475*T, 0.525*T + 0.475*B),
-        'discount':    (B, 0.95*B + 0.05*T)
+        'discount':      (bottom,                        bottom + DISCOUNT_PCT * rango),
+        'near_discount': (bottom,                        bottom + NEAR_DISCOUNT_PCT * rango),
+        'equilibrium':   (bottom + 0.45 * rango,         bottom + 0.55 * rango),
+        'premium':       (bottom + PREMIUM_PCT * rango,  top),
     }
+
+
+def detect_bullish_ob(high_arr, low_arr, close_arr, swing_lows):
+    if not swing_lows:
+        return 'N/A'
+    last_low_idx = swing_lows[-1][0]
+    search_start = max(1, last_low_idx - 10)
+    search_end   = min(len(close_arr) - 1, last_low_idx + 3)
+    for i in range(search_end, search_start, -1):
+        if close_arr[i] < close_arr[i-1]:
+            return f'{low_arr[i]:.2f}-{high_arr[i]:.2f}'
+    return 'N/A'
 
 
 def analyze_ticker(ticker):
@@ -143,51 +149,56 @@ def analyze_ticker(ticker):
         vol_arr   = df['Volume'].values.flatten()
 
         top, bottom = get_trailing_extremes(high_arr, low_arr, SWING_LENGTH)
-        if top is None:
+        if top is None or top == bottom:
             return None
 
-        zones         = calculate_zones(top, bottom)
-        price         = float(close_arr[-1])
-        disc_low      = float(zones['discount'][0])
-        disc_high     = float(zones['discount'][1])
+        zones = calculate_zones(top, bottom)
+        price = float(close_arr[-1])
+        rango = top - bottom
 
-        if not (disc_low <= price <= disc_high):
+        pct_en_rango = (price - bottom) / rango * 100
+
+        in_discount      = zones['discount'][0]      <= price <= zones['discount'][1]
+        in_near_discount = zones['near_discount'][0]  <= price <= zones['near_discount'][1]
+
+        if not in_near_discount:
             return None
 
-        # % dentro de la zona (0% = fondo, 100% = techo)
-        zone_range  = disc_high - disc_low
-        pct_in_zone = ((price - disc_low) / zone_range * 100) if zone_range > 0 else 0
+        zona_label = 'Discount' if in_discount else 'Near Discount'
 
-        # RSI
-        rsi = round(float(calculate_rsi(pd.Series(close_arr)).iloc[-1]), 1)
+        nd_range    = zones['near_discount'][1] - zones['near_discount'][0]
+        pct_in_zone = ((price - bottom) / nd_range * 100) if nd_range > 0 else 0
 
-        # Volumen ratio vs 20d
+        rsi       = round(float(calculate_rsi(pd.Series(close_arr)).iloc[-1]), 1)
         avg_vol   = float(np.mean(vol_arr[-21:-1]))
         vol_ratio = round(float(vol_arr[-1]) / avg_vol, 2) if avg_vol > 0 else 0
 
-        # Tendencia
-        swing_highs, _ = find_swing_points(high_arr, low_arr, SWING_LENGTH)
+        swing_highs, swing_lows = find_swing_points(high_arr, low_arr, SWING_LENGTH)
         if len(swing_highs) >= 2:
             trend = 'Bullish' if swing_highs[-1][1] > swing_highs[-2][1] else 'Bearish'
         else:
             trend = 'N/A'
 
+        ob_str = detect_bullish_ob(high_arr, low_arr, close_arr, swing_lows)
+
         return {
-            'Ticker':          ticker,
-            'Precio':          round(price, 2),
-            'Swing_High':      round(float(top), 2),
-            'Swing_Low':       round(float(bottom), 2),
-            'Discount_Top':    round(disc_high, 2),
-            'Discount_Bot':    round(disc_low, 2),
-            'Pct_en_Zona':     round(pct_in_zone, 1),
-            'Pct_desde_Low':   round((price - bottom) / bottom * 100, 2),
-            'RSI':             rsi,
-            'Vol_Ratio_20d':   vol_ratio,
-            'Tendencia':       trend,
-            'TradingView':     f'https://www.tradingview.com/chart/?symbol={ticker}'
+            'Ticker':        ticker,
+            'Zona':          zona_label,
+            'Precio':        round(price, 2),
+            'Swing_High':    round(float(top), 2),
+            'Swing_Low':     round(float(bottom), 2),
+            'Pct_Rango':     round(pct_en_rango, 1),
+            'Pct_Zona':      round(pct_in_zone, 1),
+            'Dist_Low_Pct':  round((price - bottom) / bottom * 100, 2),
+            'OB_Bullish':    ob_str,
+            'RSI':           rsi,
+            'Vol_Ratio_20d': vol_ratio,
+            'Tendencia':     trend,
+            'TradingView':   f'https://www.tradingview.com/chart/?symbol={ticker}'
         }
+
     except Exception as e:
-        print(f'  ⚠ Error {ticker}: {e}')
+        print(f'  Warning {ticker}: {e}')
         return None
 
 
@@ -195,11 +206,11 @@ def analyze_ticker(ticker):
 # MAIN
 # ============================================================
 if __name__ == '__main__':
-    print(f'🔍 SMC Discount Zone Screener')
-    print(f'   Universo  : {len(ALL_TICKERS)} tickers (S&P500 + NASDAQ100)')
-    print(f'   Timeframe : Diario | Período: {DATA_PERIOD}')
-    print(f'   Inicio    : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
-    print('─' * 55)
+    print('SMC Discount Zone Screener v2')
+    print(f'Universo   : {len(ALL_TICKERS)} tickers')
+    print(f'Swing Len  : {SWING_LENGTH} | Discount: {int(DISCOUNT_PCT*100)}% | Near: {int(NEAR_DISCOUNT_PCT*100)}%')
+    print(f'Inicio     : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
+    print('-' * 65)
 
     results = []
     total   = len(ALL_TICKERS)
@@ -208,30 +219,31 @@ if __name__ == '__main__':
         result = analyze_ticker(ticker)
         if result:
             results.append(result)
-            print(f'  ✅ [{i+1:3}/{total}] {ticker:6} → En Discount | RSI: {result["RSI"]} | Tendencia: {result["Tendencia"]}')
+            print(f'  HIT [{i+1:3}/{total}] {ticker:6} | {result["Zona"]:14} | '
+                  f'Rango: {result["Pct_Rango"]:5.1f}% | RSI: {result["RSI"]:5.1f} | {result["Tendencia"]}')
         else:
-            print(f'  ·  [{i+1:3}/{total}] {ticker:6}')
+            print(f'  --- [{i+1:3}/{total}] {ticker}')
 
         if (i + 1) % BATCH_SIZE == 0:
             time.sleep(SLEEP_BETWEEN)
 
-    print('─' * 55)
-    print(f'✅ Scan completo: {len(results)} acciones en Discount de {total}')
+    print('-' * 65)
+    print(f'Resultado: {len(results)} acciones en zona de interes de {total}')
 
     if results:
-        df_out = pd.DataFrame(results).sort_values('Pct_en_Zona')
+        df_out = pd.DataFrame(results)
+        zona_order = {'Discount': 0, 'Near Discount': 1}
+        df_out['_ord'] = df_out['Zona'].map(zona_order).fillna(2)
+        df_out = df_out.sort_values(['_ord', 'Pct_Rango']).drop(columns=['_ord'])
 
-        # Guardar CSV
         os.makedirs('results', exist_ok=True)
-        date_str  = datetime.now().strftime('%Y%m%d_%H%M')
-        filename  = f'results/smc_discount_{date_str}.csv'
-        df_out.to_csv(filename, index=False)
-        # También guardar como "latest" para fácil acceso
+        date_str = datetime.now().strftime('%Y%m%d_%H%M')
+        df_out.to_csv(f'results/smc_discount_{date_str}.csv', index=False)
         df_out.to_csv('results/smc_discount_latest.csv', index=False)
-        print(f'💾 Guardado: {filename}')
-        print(f'💾 Guardado: results/smc_discount_latest.csv')
-
-        print('\n📋 TOP 10 mejores setups:')
-        print(df_out[['Ticker','Precio','Pct_en_Zona','RSI','Vol_Ratio_20d','Tendencia']].head(10).to_string(index=False))
+        print(f'Guardado: results/smc_discount_latest.csv')
+        print()
+        print('TOP 15:')
+        cols = ['Ticker','Zona','Precio','Pct_Rango','RSI','Vol_Ratio_20d','Tendencia','OB_Bullish']
+        print(df_out[cols].head(15).to_string(index=False))
     else:
-        print('⚠️  No se encontraron acciones en zona Discount.')
+        print('Sin resultados. Aumenta NEAR_DISCOUNT_PCT en el script.')
