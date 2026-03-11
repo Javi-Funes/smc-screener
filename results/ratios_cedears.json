@@ -1,395 +1,2535 @@
 {
   "_meta": {
-    "actualizado": "2026-03-11 21:09",
-    "total_tickers": 55,
-    "fuentes": {
-      "comafi": 0,
-      "cajavaloroes": 55
-    }
+    "actualizado": "2026-03-11 21:17",
+    "total": 361,
+    "comafi": 306,
+    "cajavaloroes": 55
   },
   "SPY": {
     "ratio": 20.0,
-    "nombre": "SPDR S&P 500",
+    "nombre": "",
     "byma": "SPY",
-    "tipo": "Accion",
+    "tipo": "ETF",
     "fuente": "CajaValores"
   },
   "QQQ": {
     "ratio": 20.0,
-    "nombre": "INVESCO QQQ TRUST",
+    "nombre": "",
     "byma": "QQQ",
-    "tipo": "Accion",
+    "tipo": "ETF",
     "fuente": "CajaValores"
   },
   "IWM": {
     "ratio": 10.0,
-    "nombre": "ISHARES TRUST RUSSELL 2000",
+    "nombre": "",
     "byma": "IWM",
-    "tipo": "Accion",
+    "tipo": "ETF",
     "fuente": "CajaValores"
   },
   "EEM": {
     "ratio": 5.0,
-    "nombre": "ISHARES MSCI EMERGING MARKET",
+    "nombre": "",
     "byma": "EEM",
-    "tipo": "Accion",
+    "tipo": "ETF",
     "fuente": "CajaValores"
   },
   "XLF": {
     "ratio": 2.0,
-    "nombre": "FINANCIAL SELECT SECTOR SPDR FUND",
+    "nombre": "",
     "byma": "XLF",
-    "tipo": "Accion",
+    "tipo": "ETF",
     "fuente": "CajaValores"
   },
   "XLE": {
     "ratio": 2.0,
-    "nombre": "ENERGY SELECT SECTOR SPDR FUND",
+    "nombre": "",
     "byma": "XLE",
-    "tipo": "Accion",
+    "tipo": "ETF",
     "fuente": "CajaValores"
   },
   "DIA": {
     "ratio": 20.0,
-    "nombre": "SPDR DOW JONES INDUSTRIAL",
+    "nombre": "",
     "byma": "DIA",
-    "tipo": "Accion",
+    "tipo": "ETF",
     "fuente": "CajaValores"
   },
   "EWZ": {
     "ratio": 2.0,
-    "nombre": "ISHARES MSCI BRAZIL CAP",
+    "nombre": "",
     "byma": "EWZ",
-    "tipo": "Accion",
+    "tipo": "ETF",
     "fuente": "CajaValores"
   },
   "ARKK": {
     "ratio": 10.0,
-    "nombre": "ARK INNOVATION",
+    "nombre": "",
     "byma": "ARKK",
-    "tipo": "Accion",
+    "tipo": "ETF",
     "fuente": "CajaValores"
   },
   "SH": {
     "ratio": 8.0,
-    "nombre": "PROSHARES  SHORT S&P500",
+    "nombre": "",
     "byma": "SH",
-    "tipo": "Accion",
+    "tipo": "ETF",
     "fuente": "CajaValores"
   },
   "GLD": {
     "ratio": 50.0,
-    "nombre": "ETF SPDR GOLD TRUST",
+    "nombre": "",
     "byma": "GLD",
-    "tipo": "Accion",
+    "tipo": "ETF",
     "fuente": "CajaValores"
   },
   "ETHA": {
     "ratio": 5.0,
-    "nombre": "ISHARES ETHEREUM TR ETF",
+    "nombre": "",
     "byma": "ETHA",
-    "tipo": "Accion",
+    "tipo": "ETF",
     "fuente": "CajaValores"
   },
   "URA": {
     "ratio": 5.0,
-    "nombre": "GLOBAL X URANIUM ETF",
+    "nombre": "",
     "byma": "URA",
-    "tipo": "Accion",
+    "tipo": "ETF",
     "fuente": "CajaValores"
   },
   "SMH": {
     "ratio": 50.0,
-    "nombre": "VAN ECK SEMICONDUCTOR ETF",
+    "nombre": "",
     "byma": "SMH",
-    "tipo": "Accion",
+    "tipo": "ETF",
     "fuente": "CajaValores"
   },
   "SPXL": {
     "ratio": 25.0,
-    "nombre": "DIREXION DAILY S&P 500 BULL 3X",
+    "nombre": "",
     "byma": "SPXL",
-    "tipo": "Accion",
+    "tipo": "ETF",
     "fuente": "CajaValores"
   },
   "XLU": {
     "ratio": 15.0,
-    "nombre": "UTILITIES SELECT SECTOR SPDR FUND",
+    "nombre": "",
     "byma": "XLU",
-    "tipo": "Accion",
+    "tipo": "ETF",
     "fuente": "CajaValores"
   },
   "CIBR": {
     "ratio": 10.0,
-    "nombre": "FIRST TRUST NASDAQ CYBERSECURITY",
+    "nombre": "",
     "byma": "CIBR",
-    "tipo": "Accion",
+    "tipo": "ETF",
     "fuente": "CajaValores"
   },
   "TQQQ": {
     "ratio": 25.0,
-    "nombre": "PROSHARES ULTRAPRO QQQ",
+    "nombre": "",
     "byma": "TQQQ",
-    "tipo": "Accion",
+    "tipo": "ETF",
     "fuente": "CajaValores"
   },
   "VXX": {
     "ratio": 5.0,
-    "nombre": "IPATH SERIES B S&P 500 VIX",
+    "nombre": "",
     "byma": "VXX",
-    "tipo": "Accion",
+    "tipo": "ETF",
     "fuente": "CajaValores"
   },
   "ITA": {
     "ratio": 50.0,
-    "nombre": "ISHARES US AEROSPACE & DEFENSE ETF",
+    "nombre": "",
     "byma": "ITA",
-    "tipo": "Accion",
+    "tipo": "ETF",
     "fuente": "CajaValores"
   },
   "F": {
     "ratio": 1.0,
-    "nombre": "FORD MOTOR COMPANY",
+    "nombre": "",
     "byma": "F",
     "tipo": "Accion",
     "fuente": "CajaValores"
   },
   "RBLX": {
     "ratio": 2.0,
-    "nombre": "ROBLOX CORP.",
+    "nombre": "",
     "byma": "RBLX",
     "tipo": "Accion",
     "fuente": "CajaValores"
   },
   "UAL": {
     "ratio": 5.0,
-    "nombre": "UNITED AIRLINES HOLDINGS INC.",
+    "nombre": "",
     "byma": "UAL",
     "tipo": "Accion",
     "fuente": "CajaValores"
   },
   "SATL": {
     "ratio": 1.0,
-    "nombre": "SATELLOGIC INC.",
+    "nombre": "",
     "byma": "SATL",
     "tipo": "Accion",
     "fuente": "CajaValores"
   },
   "MU": {
     "ratio": 5.0,
-    "nombre": "MICRON TECHNOLOGY INC",
+    "nombre": "",
     "byma": "MU",
     "tipo": "Accion",
     "fuente": "CajaValores"
   },
   "OXY": {
     "ratio": 5.0,
-    "nombre": "OCCIDENTAL PETROLEUM CORP.",
+    "nombre": "",
     "byma": "OXY",
     "tipo": "Accion",
     "fuente": "CajaValores"
   },
   "UBER": {
     "ratio": 2.0,
-    "nombre": "UBER TECHNOLOGIES INC.",
+    "nombre": "",
     "byma": "UBER",
     "tipo": "Accion",
     "fuente": "CajaValores"
   },
   "UPST": {
     "ratio": 5.0,
-    "nombre": "UPSTART HLDGS INC",
+    "nombre": "",
     "byma": "UPST",
     "tipo": "Accion",
     "fuente": "CajaValores"
   },
   "PANW": {
     "ratio": 50.0,
-    "nombre": "PALO ALTO NETWORKS INC",
+    "nombre": "",
     "byma": "PANW",
     "tipo": "Accion",
     "fuente": "CajaValores"
   },
   "MOS": {
     "ratio": 5.0,
-    "nombre": "THE MOSAIC CO",
+    "nombre": "",
     "byma": "MOS",
     "tipo": "Accion",
     "fuente": "CajaValores"
   },
   "MSTR": {
     "ratio": 20.0,
-    "nombre": "MICROSTRATEGY INC CL A NEW",
+    "nombre": "",
     "byma": "MSTR",
     "tipo": "Accion",
     "fuente": "CajaValores"
   },
   "SI": {
     "ratio": 10.0,
-    "nombre": "SILVERGATE BANCORP",
+    "nombre": "",
     "byma": "SI",
     "tipo": "Accion",
     "fuente": "CajaValores"
   },
   "BITF": {
     "ratio": 0.2,
-    "nombre": "BITFARMS LTD.",
+    "nombre": "",
     "byma": "BITF",
     "tipo": "Accion",
     "fuente": "CajaValores"
   },
   "HUT": {
     "ratio": 0.2,
-    "nombre": "HUT 8 MINING CORP.",
+    "nombre": "",
     "byma": "HUT",
     "tipo": "Accion",
     "fuente": "CajaValores"
   },
   "ABNB": {
     "ratio": 15.0,
-    "nombre": "AIRBNB INC",
+    "nombre": "",
     "byma": "ABNB",
     "tipo": "Accion",
     "fuente": "CajaValores"
   },
   "JMIA": {
     "ratio": 1.0,
-    "nombre": "ADR JUMIA TECHNOLOGIES AG",
+    "nombre": "",
     "byma": "JMIA",
     "tipo": "Accion",
     "fuente": "CajaValores"
   },
   "VALE3": {
     "ratio": 1.0,
-    "nombre": "VALE S.A.",
+    "nombre": "",
     "byma": "VALE3",
     "tipo": "Brasil",
     "fuente": "CajaValores"
   },
   "PETR3": {
     "ratio": 1.0,
-    "nombre": "PETROBRAS - PETROLEO BRASILERO S.A.",
+    "nombre": "",
     "byma": "PETR3",
     "tipo": "Brasil",
     "fuente": "CajaValores"
   },
   "BBDC3": {
     "ratio": 1.0,
-    "nombre": "BANCO BRADESCO S.A.",
+    "nombre": "",
     "byma": "BBDC3",
     "tipo": "Brasil",
     "fuente": "CajaValores"
   },
   "MGLU3": {
     "ratio": 1.0,
-    "nombre": "MAGAZINE LUIZA S.A.",
+    "nombre": "",
     "byma": "MGLU3",
     "tipo": "Brasil",
     "fuente": "CajaValores"
   },
   "ITUB3": {
     "ratio": 1.0,
-    "nombre": "BANCO ITAÚ UNIBANCO S.A.",
+    "nombre": "",
     "byma": "ITUB3",
     "tipo": "Brasil",
     "fuente": "CajaValores"
   },
   "PRIO3": {
     "ratio": 2.0,
-    "nombre": "PETRO RIO S.A.",
+    "nombre": "",
     "byma": "PRIO3",
     "tipo": "Brasil",
     "fuente": "CajaValores"
   },
   "BBAS3": {
     "ratio": 2.0,
-    "nombre": "BANCO DO BRASIL S.A.",
+    "nombre": "",
     "byma": "BBAS3",
     "tipo": "Brasil",
     "fuente": "CajaValores"
   },
   "RENT3": {
     "ratio": 2.0,
-    "nombre": "LOCALIZA RENT A CAR S.A.",
+    "nombre": "",
     "byma": "RENT3",
     "tipo": "Brasil",
     "fuente": "CajaValores"
   },
   "SUZB3": {
     "ratio": 1.0,
-    "nombre": "SUZANO S.A.",
+    "nombre": "",
     "byma": "SUZB3",
     "tipo": "Brasil",
     "fuente": "CajaValores"
   },
   "ABEV3": {
     "ratio": 1.0,
-    "nombre": "AMBEV S.A.",
+    "nombre": "",
     "byma": "ABEV3",
     "tipo": "Brasil",
     "fuente": "CajaValores"
   },
   "HAPV3": {
     "ratio": 1.0,
-    "nombre": "HAPVIDA PARTICIPACOES E INVESTIMENTOS S.A.",
+    "nombre": "",
     "byma": "HAPV3",
     "tipo": "Brasil",
     "fuente": "CajaValores"
   },
   "LREN3": {
     "ratio": 1.0,
-    "nombre": "LOJAS RENNER S.A.",
+    "nombre": "",
     "byma": "LREN3",
     "tipo": "Brasil",
     "fuente": "CajaValores"
   },
   "CSNA3": {
     "ratio": 1.0,
-    "nombre": "COMPANHIA SIDERÚRGICA NACIONAL S.A.",
+    "nombre": "",
     "byma": "CSNA3",
     "tipo": "Brasil",
     "fuente": "CajaValores"
   },
   "BPAC11": {
     "ratio": 1.0,
-    "nombre": "BANCO BTG PACTUAL S.A. UNIT",
+    "nombre": "",
     "byma": "BPA11",
     "tipo": "Brasil",
     "fuente": "CajaValores"
   },
   "NATU3": {
     "ratio": 1.0,
-    "nombre": "NATURA COSMETICOS SA",
+    "nombre": "",
     "byma": "NATU3",
     "tipo": "Brasil",
     "fuente": "CajaValores"
   },
   "WEGE3": {
     "ratio": 1.0,
-    "nombre": "WEG S.A.",
+    "nombre": "",
     "byma": "WEGE3",
     "tipo": "Brasil",
     "fuente": "CajaValores"
   },
   "SBSP3": {
     "ratio": 1.0,
-    "nombre": "CIA SANEAMENTO BASICO DE SP",
+    "nombre": "",
     "byma": "SBSP3",
     "tipo": "Brasil",
     "fuente": "CajaValores"
   },
   "VIVT3": {
     "ratio": 1.0,
-    "nombre": "TELEFONICA BRASIL S.A.",
+    "nombre": "",
     "byma": "VIVT3",
     "tipo": "Brasil",
     "fuente": "CajaValores"
   },
   "TIMS3": {
     "ratio": 1.0,
-    "nombre": "TIM S.A.",
+    "nombre": "",
     "byma": "TIMS3",
     "tipo": "Brasil",
     "fuente": "CajaValores"
+  },
+  "ABT": {
+    "ratio": 4.0,
+    "nombre": "ABBOTT LABORATORIES",
+    "byma": "ABT",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "HWM": {
+    "ratio": 1.0,
+    "nombre": "HOWMET AEROSPACE INC",
+    "byma": "HWM",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "AEG": {
+    "ratio": 1.0,
+    "nombre": "AEGON LTD NPV",
+    "byma": "AEG",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "MO": {
+    "ratio": 4.0,
+    "nombre": "ALTRIA GROUP, INC",
+    "byma": "MO",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "AEM": {
+    "ratio": 6.0,
+    "nombre": "AGNICO EAGLE MINES LIMITED",
+    "byma": "AEM",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "AMX": {
+    "ratio": 1.0,
+    "nombre": "AMERICA MOVIL-SPN ADR",
+    "byma": "AMX",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "AXP": {
+    "ratio": 15.0,
+    "nombre": "AMERICAN EXPRESS Co.",
+    "byma": "AXP",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "AIG": {
+    "ratio": 5.0,
+    "nombre": "AMERICAN INTERNATIONAL GROUP INC (AIG)",
+    "byma": "AIG",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "AMGN": {
+    "ratio": 30.0,
+    "nombre": "AMGEN INC.",
+    "byma": "AMGN",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ADI": {
+    "ratio": 15.0,
+    "nombre": "ANALOG DEVICES INC.",
+    "byma": "ADI",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "AAPL": {
+    "ratio": 20.0,
+    "nombre": "APPLE INC.",
+    "byma": "AAPL",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "AMAT": {
+    "ratio": 5.0,
+    "nombre": "APPLIED MATERIALS INC.",
+    "byma": "AMAT",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "T": {
+    "ratio": 3.0,
+    "nombre": "AT&T INC",
+    "byma": "T",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ADP": {
+    "ratio": 6.0,
+    "nombre": "AUTOMATIC DATA PROCESSING INC",
+    "byma": "ADP",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "AVY": {
+    "ratio": 18.0,
+    "nombre": "AVERY DENNISON CORPORATION",
+    "byma": "AVY",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "CAR": {
+    "ratio": 26.0,
+    "nombre": "AVIS BUDGET GROUP INC.",
+    "byma": "CAR",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "AZN": {
+    "ratio": 2.0,
+    "nombre": "ASTRAZENECA PLC - ADR",
+    "byma": "AZN",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BBVA": {
+    "ratio": 1.0,
+    "nombre": "BANCO BILBAO VIZCAYA-SP ADR",
+    "byma": "BBVA",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BBD": {
+    "ratio": 1.0,
+    "nombre": "BANCO BRADESCO, S.A.",
+    "byma": "BBD",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BSBR": {
+    "ratio": 1.0,
+    "nombre": "BANCO SANTANDER (BRASIL) S.A.",
+    "byma": "BSBR",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BAC": {
+    "ratio": 4.0,
+    "nombre": "BANK OF AMERICA CORPORATION",
+    "byma": "BAC",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BCS": {
+    "ratio": 1.0,
+    "nombre": "BARCLAYS BANK plc ADR",
+    "byma": "BCS",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "GOLD": {
+    "ratio": 2.0,
+    "nombre": "BARRICK GOLD CORP.",
+    "byma": "GOLD",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BAS GR": {
+    "ratio": 2.0,
+    "nombre": "BASF SE",
+    "byma": "BAS GR",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BAYN GR": {
+    "ratio": 3.0,
+    "nombre": "BAYER AG",
+    "byma": "BAYN GR",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BHP": {
+    "ratio": 2.0,
+    "nombre": "BHP GROUP LTD",
+    "byma": "BHP",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BA": {
+    "ratio": 24.0,
+    "nombre": "BOEING Co.",
+    "byma": "BA",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BP": {
+    "ratio": 5.0,
+    "nombre": "BP  plc. ADR",
+    "byma": "BP",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BMY": {
+    "ratio": 3.0,
+    "nombre": "BRISTOL MYERS SQUIBB COMPANY",
+    "byma": "BMY",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BG": {
+    "ratio": 5.0,
+    "nombre": "BUNGE GLOBAL SA NPV",
+    "byma": "BG",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "CAH": {
+    "ratio": 3.0,
+    "nombre": "CARDINAL HEALTH INC",
+    "byma": "CAH",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "CAT": {
+    "ratio": 20.0,
+    "nombre": "CATERPILLAR Inc.",
+    "byma": "CAT",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "CX": {
+    "ratio": 1.0,
+    "nombre": "CEMEX S.A.B. de C.V. ADR",
+    "byma": "CX",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "CVX": {
+    "ratio": 16.0,
+    "nombre": "CHEVRON CORP",
+    "byma": "CVX",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "CSCO": {
+    "ratio": 5.0,
+    "nombre": "CISCO SYSTEMS  Inc.",
+    "byma": "CSCO",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "C": {
+    "ratio": 3.0,
+    "nombre": "CITIGROUP INCORPORATED",
+    "byma": "C",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "KO": {
+    "ratio": 5.0,
+    "nombre": "COCA COLA Co.",
+    "byma": "KO",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "KOF": {
+    "ratio": 2.0,
+    "nombre": "COCA-COLA FEMSA, S.A.B DE CV",
+    "byma": "KOF",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "CDE": {
+    "ratio": 1.0,
+    "nombre": "COEUR MINING INC",
+    "byma": "CDE",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "CL": {
+    "ratio": 3.0,
+    "nombre": "COLGATE PALMOLIVE COMPANY",
+    "byma": "CL",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "VALE": {
+    "ratio": 2.0,
+    "nombre": "VALE S.A.",
+    "byma": "VALE",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "GLW": {
+    "ratio": 4.0,
+    "nombre": "CORNING INCORPORATED",
+    "byma": "GLW",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "COST": {
+    "ratio": 48.0,
+    "nombre": "COSTCO WHOLSALE CORP",
+    "byma": "COST",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "MBG GR": {
+    "ratio": 4.0,
+    "nombre": "MERCEDES-BENZ AG",
+    "byma": "MBG GR",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "DE": {
+    "ratio": 40.0,
+    "nombre": "DEERE & COMPANY",
+    "byma": "DE",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "DTEA GR": {
+    "ratio": 3.0,
+    "nombre": "DEUTSCHE TELEKOM AG ADR",
+    "byma": "DTEA GR",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "DEO": {
+    "ratio": 6.0,
+    "nombre": "DIAGEO PLC ADR",
+    "byma": "DEO",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "DIS": {
+    "ratio": 12.0,
+    "nombre": "DISNEY COMMON STOCK",
+    "byma": "DIS",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "DD": {
+    "ratio": 5.0,
+    "nombre": "DUPONT DE NOMOURS INC",
+    "byma": "DD",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "EBAY": {
+    "ratio": 2.0,
+    "nombre": "EBAY INC.",
+    "byma": "EBAY",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "EOAN GR": {
+    "ratio": 6.0,
+    "nombre": "E.ON SE",
+    "byma": "EOAN GR",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "LLY": {
+    "ratio": 56.0,
+    "nombre": "ELI LILLY AND COMPANY",
+    "byma": "LLY",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "E": {
+    "ratio": 4.0,
+    "nombre": "ENI SPA - ADR",
+    "byma": "E",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "XOM": {
+    "ratio": 10.0,
+    "nombre": "EXXON MOBIL CORPORATION",
+    "byma": "XOM",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "FNMA": {
+    "ratio": 1.0,
+    "nombre": "FED. NATL, MORT - FANNIE MAE",
+    "byma": "FNMA",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "FDX": {
+    "ratio": 10.0,
+    "nombre": "FEDEX CORP",
+    "byma": "FDX",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "FSLR": {
+    "ratio": 18.0,
+    "nombre": "FIRST SOLAR INC.",
+    "byma": "FSLR",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "FMX": {
+    "ratio": 6.0,
+    "nombre": "FOMENTO ECONOMICO MEXICANO - FEMSA ADR",
+    "byma": "FMX",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ORANY": {
+    "ratio": 1.0,
+    "nombre": "ORANGE**",
+    "byma": "ORANY",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "FMCC": {
+    "ratio": 1.0,
+    "nombre": "FREDDIE MAC (FEDERAL HOME LOAN MORTGAGE CORP.)",
+    "byma": "FMCC",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "FCX": {
+    "ratio": 3.0,
+    "nombre": "FREEPORT MCMORAN INC.",
+    "byma": "FCX",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "GE": {
+    "ratio": 8.0,
+    "nombre": "GE AEROSPACE.",
+    "byma": "GE",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "GSK": {
+    "ratio": 4.0,
+    "nombre": "GSK plc",
+    "byma": "GSK",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "GFI": {
+    "ratio": 1.0,
+    "nombre": "GOLD FIELDS LTD.",
+    "byma": "GFI",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "GOOGL": {
+    "ratio": 58.0,
+    "nombre": "Alphabet Inc. CL  \"A\"",
+    "byma": "GOOGL",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "PAC": {
+    "ratio": 16.0,
+    "nombre": "GRUPO AEROPORTUARIO DEL PACIFICO, S.A.B. de C.V.",
+    "byma": "PAC",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ASR": {
+    "ratio": 20.0,
+    "nombre": "GRUPO AEROPORTUARIO DEL SURESTE , S.A.B. de C.V.",
+    "byma": "ASR",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "TV": {
+    "ratio": 3.0,
+    "nombre": "GRUPO TELEVISA S.A. ADR",
+    "byma": "TV",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BSN GR": {
+    "ratio": 20.0,
+    "nombre": "DANONE",
+    "byma": "BSN GR",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "HOG": {
+    "ratio": 3.0,
+    "nombre": "HARLEY DAVIDSON INC.",
+    "byma": "HOG",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "HMY": {
+    "ratio": 1.0,
+    "nombre": "HARMONY GOLD MINING COMPANY LTD.",
+    "byma": "HMY",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "HDB": {
+    "ratio": 2.0,
+    "nombre": "HDFC BANK LIMITED",
+    "byma": "HDB",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "HL": {
+    "ratio": 1.0,
+    "nombre": "HECLA MINING CO",
+    "byma": "HL",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "HPQ": {
+    "ratio": 1.0,
+    "nombre": "HP Inc",
+    "byma": "HPQ",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "HMC": {
+    "ratio": 1.0,
+    "nombre": "HONDA MOTOR  CO. LTD",
+    "byma": "HMC",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "HHPD LI": {
+    "ratio": 2.0,
+    "nombre": "HON HAI PRECISION INDUSTRY CO. LTD.",
+    "byma": "HHPD LI",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "HON": {
+    "ratio": 8.0,
+    "nombre": "HONEYWELL INTERNATIONAL INC. (ex Allied S.)",
+    "byma": "HON",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "HSBC": {
+    "ratio": 2.0,
+    "nombre": "HSBC HOLDINGS plc ADR",
+    "byma": "HSBC",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "IBM": {
+    "ratio": 15.0,
+    "nombre": "IBM Corp.",
+    "byma": "IBM",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "IBN": {
+    "ratio": 1.0,
+    "nombre": "ICICI BANK LTD",
+    "byma": "IBN",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "INFY": {
+    "ratio": 1.0,
+    "nombre": "INFOSYS LIMITED",
+    "byma": "INFY",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ING": {
+    "ratio": 3.0,
+    "nombre": "ING Group NV ADR",
+    "byma": "ING",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "INTC": {
+    "ratio": 5.0,
+    "nombre": "INTEL  Corporation",
+    "byma": "INTC",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "IFF": {
+    "ratio": 12.0,
+    "nombre": "INTERNATIONAL FLAVORS & FRAGRANCE INC.",
+    "byma": "IFF",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "IP": {
+    "ratio": 4.0,
+    "nombre": "INTERNATIONAL PAPER Co.",
+    "byma": "IP",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "JPM": {
+    "ratio": 15.0,
+    "nombre": "J.P. MORGAN & CHASE Co.",
+    "byma": "JPM",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "JNJ": {
+    "ratio": 15.0,
+    "nombre": "JOHNSON & JOHNSON",
+    "byma": "JNJ",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "KMB": {
+    "ratio": 6.0,
+    "nombre": "KIMBERLY CLARK CORPORATION",
+    "byma": "KMB",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "KGC": {
+    "ratio": 1.0,
+    "nombre": "KINROSS GOLD CORP.",
+    "byma": "KGC",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "KB": {
+    "ratio": 2.0,
+    "nombre": "KB FINANCIAL GROUP INC.",
+    "byma": "KB",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "KEP": {
+    "ratio": 1.0,
+    "nombre": "KOREA ELECTRIC POWER CORP.",
+    "byma": "KEP",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "LVS": {
+    "ratio": 2.0,
+    "nombre": "LAS VEGAS SANDS CORP.",
+    "byma": "LVS",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "LYG": {
+    "ratio": 2.0,
+    "nombre": "LLOYDS BANKING GROUP plc.",
+    "byma": "LYG",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ERIC": {
+    "ratio": 2.0,
+    "nombre": "LM ERICSSON TELEPHONE Co. ADR",
+    "byma": "ERIC",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "LMT": {
+    "ratio": 20.0,
+    "nombre": "LOCKHEED MARTIN CORPORATION",
+    "byma": "LMT",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "MMC": {
+    "ratio": 16.0,
+    "nombre": "MARSH & MCLENNAN COMPANIES, INC.",
+    "byma": "MMC",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "MCD": {
+    "ratio": 24.0,
+    "nombre": "Mc DONALD'S Corp.",
+    "byma": "MCD",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "MDT": {
+    "ratio": 4.0,
+    "nombre": "MEDTRONIC PLC",
+    "byma": "MDT",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "MELI": {
+    "ratio": 120.0,
+    "nombre": "MERCADOLIBRE INC.",
+    "byma": "MELI",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "MRK": {
+    "ratio": 5.0,
+    "nombre": "MERCK & Co. Inc.",
+    "byma": "MRK",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "MSFT": {
+    "ratio": 30.0,
+    "nombre": "MICROSOFT CORPORATION",
+    "byma": "MSFT",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "MMM": {
+    "ratio": 10.0,
+    "nombre": "3M COMPANY",
+    "byma": "MMM",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "MUFG": {
+    "ratio": 1.0,
+    "nombre": "MITSUBISHI UFJ FINANCIAL GROUP",
+    "byma": "MUFG",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "MFG": {
+    "ratio": 1.0,
+    "nombre": "MIZUHO FINANCIAL GROUP",
+    "byma": "MFG",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "MBT": {
+    "ratio": 2.0,
+    "nombre": "MOBILE TELESYSTEMS***",
+    "byma": "MBT",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "MSI": {
+    "ratio": 20.0,
+    "nombre": "MOTOROLA SOLUTIONS Inc.",
+    "byma": "MSI",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "NGG": {
+    "ratio": 2.0,
+    "nombre": "NATIONAL GRID PLC-SP  ADR",
+    "byma": "NGG",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "NEC1 GR": {
+    "ratio": 0.3333,
+    "nombre": "NEC CORPORATION",
+    "byma": "NEC1 GR",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "NEM": {
+    "ratio": 3.0,
+    "nombre": "NEWMONT  CORPORATION",
+    "byma": "NEM",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "NKE": {
+    "ratio": 12.0,
+    "nombre": "NIKE Inc.",
+    "byma": "NKE",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "NSANY": {
+    "ratio": 1.0,
+    "nombre": "NISSAN MOTOR CO.",
+    "byma": "NSANY",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "NOK": {
+    "ratio": 1.0,
+    "nombre": "NOKIA CORPORATION ADR",
+    "byma": "NOK",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "NMR": {
+    "ratio": 1.0,
+    "nombre": "NOMURA HOLDINGS INC.",
+    "byma": "NMR",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "NVS": {
+    "ratio": 4.0,
+    "nombre": "NOVARTIS AG - ADR",
+    "byma": "NVS",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "NUE": {
+    "ratio": 16.0,
+    "nombre": "NUCOR CORPORATION",
+    "byma": "NUE",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "OGZD": {
+    "ratio": 2.0,
+    "nombre": "GAZPROM PJSC***",
+    "byma": "OGZD",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "LKOD": {
+    "ratio": 4.0,
+    "nombre": "LUKOIL PJSC**",
+    "byma": "LKOD",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ATAD": {
+    "ratio": 4.0,
+    "nombre": "TATNEFT PAO**",
+    "byma": "ATAD",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "NLMK LI": {
+    "ratio": 2.1,
+    "nombre": "NOVOLIPETSK STEEL PJSC**",
+    "byma": "NLMK LI",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ORCL": {
+    "ratio": 3.1,
+    "nombre": "ORACLE CORPORATION",
+    "byma": "ORCL",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "PCAR": {
+    "ratio": 3.0,
+    "nombre": "PACCAR INC",
+    "byma": "PCAR",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "PSO": {
+    "ratio": 1.0,
+    "nombre": "PEARSON PLC.",
+    "byma": "PSO",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "PEP": {
+    "ratio": 18.0,
+    "nombre": "PEPSICO INC",
+    "byma": "PEP",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "PFE": {
+    "ratio": 4.0,
+    "nombre": "PFIZER INC",
+    "byma": "PFE",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "PHG": {
+    "ratio": 5.0,
+    "nombre": "KONINKLIJKE PHILIPS N.V",
+    "byma": "PHG",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "PBI": {
+    "ratio": 1.0,
+    "nombre": "PITNEY BOWES INC",
+    "byma": "PBI",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "PKX": {
+    "ratio": 3.0,
+    "nombre": "POSCO HOLDINGS INC",
+    "byma": "PKX",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "PG": {
+    "ratio": 15.0,
+    "nombre": "PROCTER & GAMBLE Co.",
+    "byma": "PG",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "QCOM": {
+    "ratio": 11.0,
+    "nombre": "QUALCOMM INCORPORATED",
+    "byma": "QCOM",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BB": {
+    "ratio": 3.0,
+    "nombre": "BLACKBERRY LIMITED",
+    "byma": "BB",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "RIO": {
+    "ratio": 8.0,
+    "nombre": "RIO TINTO PLC - ADR",
+    "byma": "RIO",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SHEL": {
+    "ratio": 2.0,
+    "nombre": "SHELL PLC",
+    "byma": "SHEL",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SMSN LI": {
+    "ratio": 14.0,
+    "nombre": "SAMSUNG ELECTRONICS CO. LTD.",
+    "byma": "SMSN LI",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SAP": {
+    "ratio": 6.0,
+    "nombre": "SAP SE",
+    "byma": "SAP",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SLB": {
+    "ratio": 3.0,
+    "nombre": "SCHLUMBERGER LIMITED",
+    "byma": "SLB",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SIEGY": {
+    "ratio": 3.0,
+    "nombre": "SIEMENS AG ADR",
+    "byma": "SIEGY",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SNA": {
+    "ratio": 6.0,
+    "nombre": "SNAP-ON INCORPORATED",
+    "byma": "SNA",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SONY": {
+    "ratio": 8.0,
+    "nombre": "SONY GROUP CORPORATION",
+    "byma": "SONY",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SCCO": {
+    "ratio": 2.0,
+    "nombre": "SOUTHERN COPPER CORP.",
+    "byma": "SCCO",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SBUX": {
+    "ratio": 12.0,
+    "nombre": "STARBUCKS CORPORATION",
+    "byma": "SBUX",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SYY": {
+    "ratio": 8.0,
+    "nombre": "SYSCO CORPORATION",
+    "byma": "SYY",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "TSM": {
+    "ratio": 9.0,
+    "nombre": "TAIWAN SEMICONDUCTOR MANUFACTURING",
+    "byma": "TSM",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "TIIAY": {
+    "ratio": 1.0,
+    "nombre": "TELECOM ITALIA SPA ADR",
+    "byma": "TIIAY",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "TEF": {
+    "ratio": 8.0,
+    "nombre": "TELEFONICA S.A. ADR",
+    "byma": "TEF",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "TX": {
+    "ratio": 4.0,
+    "nombre": "TERNIUM S.A.",
+    "byma": "TX",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "TXN": {
+    "ratio": 5.0,
+    "nombre": "TEXAS INSTRUMENTS INCORPORATED",
+    "byma": "TXN",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BK": {
+    "ratio": 2.0,
+    "nombre": "BANK OF NEW YORK MELLON CORP",
+    "byma": "BK",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "HSY": {
+    "ratio": 21.0,
+    "nombre": "THE HERSHEY COMPANY",
+    "byma": "HSY",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "HD": {
+    "ratio": 32.0,
+    "nombre": "HOME DEPOT INC.",
+    "byma": "HD",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "TTE": {
+    "ratio": 3.0,
+    "nombre": "TotalEnergies SE - ADR",
+    "byma": "TTE",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "TM": {
+    "ratio": 15.0,
+    "nombre": "TOYOTA MOTOR CORPORATION ADR",
+    "byma": "TM",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "TRV": {
+    "ratio": 6.0,
+    "nombre": "The Travelers Companies, Inc.",
+    "byma": "TRV",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "JCI": {
+    "ratio": 2.0,
+    "nombre": "JOHNSON CONTROLS INTERNATIONAL",
+    "byma": "JCI",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "USB": {
+    "ratio": 5.0,
+    "nombre": "U.S. BANCORP",
+    "byma": "USB",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "UL": {
+    "ratio": 3.0,
+    "nombre": "UNILEVER PLC-SPONSORED ADR",
+    "byma": "UL",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "X": {
+    "ratio": 3.0,
+    "nombre": "UNITED STATES STEEL CORP.",
+    "byma": "X",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "RTX": {
+    "ratio": 5.0,
+    "nombre": "RTX CORPORATION",
+    "byma": "RTX",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "VZ": {
+    "ratio": 4.0,
+    "nombre": "VERIZON COMMUNICATIONS INC.",
+    "byma": "VZ",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "VOD": {
+    "ratio": 1.0,
+    "nombre": "VODAFONE GROUP plc. ADR",
+    "byma": "VOD",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "WMT": {
+    "ratio": 18.0,
+    "nombre": "WALMART Inc.",
+    "byma": "WMT",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "WFC": {
+    "ratio": 5.0,
+    "nombre": "WELLS FARGO & COMPANY",
+    "byma": "WFC",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "AABA": {
+    "ratio": 3.0,
+    "nombre": "ALTABA INC***",
+    "byma": "AABA",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "YZCAY": {
+    "ratio": 2.0,
+    "nombre": "YANKUANG ENERGY GROUP CO. LTD.",
+    "byma": "YZCAY",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "META": {
+    "ratio": 24.0,
+    "nombre": "META PLATFORMS INC.",
+    "byma": "META",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "AMZN": {
+    "ratio": 144.0,
+    "nombre": "AMAZON.COM, INC.",
+    "byma": "AMZN",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "NVDA": {
+    "ratio": 24.0,
+    "nombre": "NVIDIA CORPORATION",
+    "byma": "NVDA",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ADBE": {
+    "ratio": 44.0,
+    "nombre": "ADOBE SYSTEMS INCORPORATED",
+    "byma": "ADBE",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BIIB": {
+    "ratio": 13.0,
+    "nombre": "BIOGEN INC.",
+    "byma": "BIIB",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "GILD": {
+    "ratio": 4.0,
+    "nombre": "GILEAD SCIENCES, INC.",
+    "byma": "GILD",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "NFLX": {
+    "ratio": 48.0,
+    "nombre": "NETFLIX, INC.",
+    "byma": "NFLX",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "TMO": {
+    "ratio": 22.0,
+    "nombre": "THERMO FISHER SCIENTIFIC INC.",
+    "byma": "TMO",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "PYPL": {
+    "ratio": 8.0,
+    "nombre": "PAYPAL HOLDINGS, INC.",
+    "byma": "PYPL",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "CRM": {
+    "ratio": 18.0,
+    "nombre": "SALESFORCE INC.",
+    "byma": "CRM",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "TSLA": {
+    "ratio": 15.0,
+    "nombre": "TESLA, INC.",
+    "byma": "TSLA",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "AMD": {
+    "ratio": 10.0,
+    "nombre": "ADVANCED MICRO DEVICES, INC.",
+    "byma": "AMD",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "NG": {
+    "ratio": 0.25,
+    "nombre": "NOVAGOLD RESOURCES INC.",
+    "byma": "NG",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "TRIP": {
+    "ratio": 2.0,
+    "nombre": "TRIPADVISOR, INC.",
+    "byma": "TRIP",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ANF": {
+    "ratio": 1.0,
+    "nombre": "ABERCROMBIE & FITCH CO.",
+    "byma": "ANF",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "URBN": {
+    "ratio": 2.0,
+    "nombre": "URBAN OUTFITTERS, INC.",
+    "byma": "URBN",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "GRMN": {
+    "ratio": 3.0,
+    "nombre": "GARMIN LTD.",
+    "byma": "GRMN",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SNAP": {
+    "ratio": 1.0,
+    "nombre": "SNAP INC.",
+    "byma": "SNAP",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "VRSN": {
+    "ratio": 6.0,
+    "nombre": "VERISIGN, INC.",
+    "byma": "VRSN",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "XRX": {
+    "ratio": 1.0,
+    "nombre": "XEROX HOLDING CORPORATION",
+    "byma": "XRX",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "YELP": {
+    "ratio": 2.0,
+    "nombre": "YELP INC.",
+    "byma": "YELP",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ROST": {
+    "ratio": 4.0,
+    "nombre": "ROSS STORES, INC.",
+    "byma": "ROST",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "TGT": {
+    "ratio": 24.0,
+    "nombre": "TARGET CORPORATION",
+    "byma": "TGT",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "GS": {
+    "ratio": 13.0,
+    "nombre": "THE GOLDMAN SACHS GROUP, INC",
+    "byma": "GS",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "V": {
+    "ratio": 18.0,
+    "nombre": "VISA INC",
+    "byma": "V",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ARCO": {
+    "ratio": 0.5,
+    "nombre": "ARCOS DORADOS HOLDINGS INC.",
+    "byma": "ARCO",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "DESP": {
+    "ratio": 1.0,
+    "nombre": "DESPEGAR.COM, CORP.",
+    "byma": "DESP",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "AGRO": {
+    "ratio": 1.0,
+    "nombre": "ADECOAGRO S.A.",
+    "byma": "AGRO",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "GLOB": {
+    "ratio": 18.0,
+    "nombre": "GLOBANT S.A.",
+    "byma": "GLOB",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BABA": {
+    "ratio": 9.0,
+    "nombre": "ALIBABA GROUP HOLDING LIMITED*",
+    "byma": "BABA",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BIDU": {
+    "ratio": 11.0,
+    "nombre": "BAIDU, INC.",
+    "byma": "BIDU",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ABEV": {
+    "ratio": 0.3333,
+    "nombre": "AMBEV S.A.",
+    "byma": "ABEV",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "VIV": {
+    "ratio": 1.0,
+    "nombre": "TELEFÔNICA BRASIL S.A.",
+    "byma": "VIV",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "JD": {
+    "ratio": 4.0,
+    "nombre": "JD.COM, INC.",
+    "byma": "JD",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "NTES": {
+    "ratio": 14.0,
+    "nombre": "NETEASE, INC.",
+    "byma": "NTES",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "TCOM": {
+    "ratio": 2.0,
+    "nombre": "TRIP.COM Group Ltd.",
+    "byma": "TCOM",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "YY": {
+    "ratio": 5.0,
+    "nombre": "JOYY Inc.",
+    "byma": "YY",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "GGB": {
+    "ratio": 0.25,
+    "nombre": "GERDAU S.A.",
+    "byma": "GGB",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BRFS": {
+    "ratio": 0.3333,
+    "nombre": "BRF S.A.",
+    "byma": "BRFS",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "CBD": {
+    "ratio": 1.0,
+    "nombre": "COMPANHIA BRASILEIRA DE DISTRIBUIÇÃO**",
+    "byma": "CBD",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SBS": {
+    "ratio": 0.5,
+    "nombre": "COMPANHIA DE SANEAMENTO BÁSICO DO ESTADO DE SÃO PAULO–SABESP",
+    "byma": "SBS",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "WB": {
+    "ratio": 6.0,
+    "nombre": "WEIBO CORPORATION",
+    "byma": "WB",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ITUB": {
+    "ratio": 1.0,
+    "nombre": "ITAÚ UNIBANCO HOLDING S.A.",
+    "byma": "ITUB",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ERJ": {
+    "ratio": 1.0,
+    "nombre": "EMBRAER-EMPRESA BRASILEIRA DE AERONÁUTICA S.A.",
+    "byma": "ERJ",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "UGP": {
+    "ratio": 1.0,
+    "nombre": "ULTRAPAR PARTICIPAÇÕES S.A.",
+    "byma": "UGP",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SUZ": {
+    "ratio": 1.0,
+    "nombre": "SUZANO SA",
+    "byma": "SUZ",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "EBR": {
+    "ratio": 0.25,
+    "nombre": "CENTRAIS ELÉTRICAS BRASILEIRAS S.A. - ELETROBRÁS",
+    "byma": "EBR",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ELP": {
+    "ratio": 0.3333,
+    "nombre": "COMPANHIA PARANAENSE DE ENERGIA-COPEL - PREF",
+    "byma": "ELP",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "TIMB": {
+    "ratio": 1.0,
+    "nombre": "TIM PARTICIPAÇÕES S.A.",
+    "byma": "TIMB",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SID": {
+    "ratio": 0.125,
+    "nombre": "COMPANHIA SIDERÚRGICA NACIONAL",
+    "byma": "SID",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "TS": {
+    "ratio": 1.0,
+    "nombre": "TENARIS S.A. (ADS)",
+    "byma": "TS",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SAN": {
+    "ratio": 0.25,
+    "nombre": "BANCO SANTANDER  S.A. (ADR)",
+    "byma": "SAN",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "PBR": {
+    "ratio": 1.0,
+    "nombre": "PETROLEO BRASILEIRO - PETROBRAS (ADR)",
+    "byma": "PBR",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "VIST": {
+    "ratio": 3.0,
+    "nombre": "VISTA ENERGY S.A.B. de C.V (ADS)",
+    "byma": "VIST",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ABBV": {
+    "ratio": 10.0,
+    "nombre": "ABBVIE INC",
+    "byma": "ABBV",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BRK/B": {
+    "ratio": 22.0,
+    "nombre": "BERKSHIRE HATHAWAY INC",
+    "byma": "BRK/B",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BIOX": {
+    "ratio": 1.0,
+    "nombre": "BIOCERES CROP SOLUTIONS CORP",
+    "byma": "BIOX",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "AVGO": {
+    "ratio": 39.0,
+    "nombre": "BROADCOM INC",
+    "byma": "AVGO",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "CAAP": {
+    "ratio": 0.25,
+    "nombre": "CORP AMERICA AIRPORTS SA",
+    "byma": "CAAP",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "DOCU": {
+    "ratio": 22.0,
+    "nombre": "DOCUSIGN INC",
+    "byma": "DOCU",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ETSY": {
+    "ratio": 16.0,
+    "nombre": "ETSY INC",
+    "byma": "ETSY",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "GPRK": {
+    "ratio": 1.0,
+    "nombre": "GEOPARK LTD",
+    "byma": "GPRK",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "HAL": {
+    "ratio": 2.0,
+    "nombre": "HALLIBURTON CO",
+    "byma": "HAL",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "MA": {
+    "ratio": 33.0,
+    "nombre": "MASTERCARD INC",
+    "byma": "MA",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "PAAS": {
+    "ratio": 3.0,
+    "nombre": "PAN AMERICAN SILVER CORP",
+    "byma": "PAAS",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "PSX": {
+    "ratio": 6.0,
+    "nombre": "PHILLIPS 66",
+    "byma": "PSX",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "UNP": {
+    "ratio": 20.0,
+    "nombre": "UNION PACIFIC CORP",
+    "byma": "UNP",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "UNH": {
+    "ratio": 33.0,
+    "nombre": "UNITEDHEALTH GROUP INC",
+    "byma": "UNH",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "WBA": {
+    "ratio": 3.0,
+    "nombre": "WALGREENS BOOTS ALLIANCE INC",
+    "byma": "WBA",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ZM": {
+    "ratio": 47.0,
+    "nombre": "ZOOM COMMUNICATIONS INC",
+    "byma": "ZM",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "EFX": {
+    "ratio": 16.0,
+    "nombre": "EQUIFAX INC",
+    "byma": "EFX",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "XYZ": {
+    "ratio": 20.0,
+    "nombre": "BLOCK, INC",
+    "byma": "XYZ",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SHOP": {
+    "ratio": 107.0,
+    "nombre": "SHOPIFY INC",
+    "byma": "SHOP",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SPOT": {
+    "ratio": 28.0,
+    "nombre": "SPOTIFY TECHNOLOGY SA",
+    "byma": "SPOT",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SNOW": {
+    "ratio": 30.0,
+    "nombre": "SNOWFLAKE INC",
+    "byma": "SNOW",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "TWLO": {
+    "ratio": 36.0,
+    "nombre": "TWILIO INC",
+    "byma": "TWLO",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "COIN": {
+    "ratio": 27.0,
+    "nombre": "COINBASE GLOBAL INC",
+    "byma": "COIN",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SPGI": {
+    "ratio": 45.0,
+    "nombre": "S&P GLOBAL INC",
+    "byma": "SPGI",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "AAL": {
+    "ratio": 2.0,
+    "nombre": "AMERICAN AIRLINES GROUP INC",
+    "byma": "AAL",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "LRCX": {
+    "ratio": 56.0,
+    "nombre": "LAM RESEARCH CORP",
+    "byma": "LRCX",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "EA": {
+    "ratio": 14.0,
+    "nombre": "ELECTRONIC ARTS INC",
+    "byma": "EA",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "XP": {
+    "ratio": 4.0,
+    "nombre": "XP INC",
+    "byma": "XP",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "GM": {
+    "ratio": 6.0,
+    "nombre": "GENERAL MOTORS CO",
+    "byma": "GM",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "DOW": {
+    "ratio": 6.0,
+    "nombre": "DOW INC",
+    "byma": "DOW",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "AKO.B": {
+    "ratio": 1.0,
+    "nombre": "EMBOTELLADORA ANDINA S.A.",
+    "byma": "AKO.B",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "NIO": {
+    "ratio": 4.0,
+    "nombre": "NIO INC",
+    "byma": "NIO",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SE": {
+    "ratio": 32.0,
+    "nombre": "SEA LTD",
+    "byma": "SE",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ADS": {
+    "ratio": 22.0,
+    "nombre": "ADIDAS AG",
+    "byma": "ADS",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "LND": {
+    "ratio": 1.0,
+    "nombre": "BRASILAGRO - CO BRASILEIRA DE PROPRIEDADES AGRICOLAS",
+    "byma": "LND",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BAK": {
+    "ratio": 2.0,
+    "nombre": "BRASKEM SA",
+    "byma": "BAK",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "AAP": {
+    "ratio": 14.0,
+    "nombre": "ADVANCE AUTO PARTS INC",
+    "byma": "AAP",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "LAC": {
+    "ratio": 1.0,
+    "nombre": "LITHIUM AMERICAS CORP",
+    "byma": "LAC",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "MRVL": {
+    "ratio": 14.0,
+    "nombre": "MARVELL TECHNOLOGY INC",
+    "byma": "MRVL",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "MUX": {
+    "ratio": 2.0,
+    "nombre": "MCEWEN MINING INC",
+    "byma": "MUX",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "NU": {
+    "ratio": 2.0,
+    "nombre": "NU HOLDINGS LTD/CAYMAN ISLANDS",
+    "byma": "NU",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "PAGS": {
+    "ratio": 3.0,
+    "nombre": "PAGSEGURO DIGITAL LTD",
+    "byma": "PAGS",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "PLTR": {
+    "ratio": 3.0,
+    "nombre": "PALANTIR TECHNOLOGIES INC",
+    "byma": "PLTR",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SHPW": {
+    "ratio": 0.5,
+    "nombre": "SHAPEWAYS HOLDINGS INC***",
+    "byma": "SHPW",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "STNE": {
+    "ratio": 3.0,
+    "nombre": "STONECO LTD",
+    "byma": "STNE",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SDA": {
+    "ratio": 2.0,
+    "nombre": "SUNCAR TECHNOLOGY GROUP INC",
+    "byma": "SDA",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "PM": {
+    "ratio": 18.0,
+    "nombre": "PHILIP MORRIS INTERNATIONAL INC.",
+    "byma": "PM",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "CVS": {
+    "ratio": 15.0,
+    "nombre": "CVS HEALTH CORP.",
+    "byma": "CVS",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "MDLZ": {
+    "ratio": 15.0,
+    "nombre": "MONDELEZ INTERNATIONAL, INC.",
+    "byma": "MDLZ",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "DAL": {
+    "ratio": 8.0,
+    "nombre": "DELTA AIR LINES INC.",
+    "byma": "DAL",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "CCL": {
+    "ratio": 3.0,
+    "nombre": "CARNIVAL CORP.",
+    "byma": "CCL",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ACN": {
+    "ratio": 75.0,
+    "nombre": "ACCENTURE PLC",
+    "byma": "ACN",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SCHW": {
+    "ratio": 13.0,
+    "nombre": "CHARLES SCHWAB CORP.",
+    "byma": "SCHW",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "MRNA": {
+    "ratio": 19.0,
+    "nombre": "MODERNA INC.",
+    "byma": "MRNA",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "STLA": {
+    "ratio": 5.0,
+    "nombre": "STELLANTIS NV",
+    "byma": "STLA",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BKNG": {
+    "ratio": 700.0,
+    "nombre": "BOOKING HOLDINGS INC.",
+    "byma": "BKNG",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "TMUS": {
+    "ratio": 33.0,
+    "nombre": "T-MOBILE US INC.",
+    "byma": "TMUS",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SPCE": {
+    "ratio": 0.5,
+    "nombre": "VIRGIN GALACTIC HOLDINGS INC.",
+    "byma": "SPCE",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "RIOT": {
+    "ratio": 3.0,
+    "nombre": "RIOT PLATFORMS INC.",
+    "byma": "RIOT",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ROKU": {
+    "ratio": 13.0,
+    "nombre": "ROKU INC.",
+    "byma": "ROKU",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "RACE": {
+    "ratio": 83.0,
+    "nombre": "FERRARI NV",
+    "byma": "RACE",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "SWKS": {
+    "ratio": 21.0,
+    "nombre": "SKYWORKS SOLUTIONS INC.",
+    "byma": "SWKS",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "PINS": {
+    "ratio": 7.0,
+    "nombre": "PINTEREST INC.",
+    "byma": "PINS",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "BKR": {
+    "ratio": 7.0,
+    "nombre": "BAKER HUGHES CO.",
+    "byma": "BKR",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "DHR": {
+    "ratio": 54.0,
+    "nombre": "DANAHER CORP.",
+    "byma": "DHR",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "GT": {
+    "ratio": 2.0,
+    "nombre": "GOODYEAR TIRE & RUBBER CO./THE",
+    "byma": "GT",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ISRG": {
+    "ratio": 90.0,
+    "nombre": "INTUITIVE SURGICAL INC.",
+    "byma": "ISRG",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "LAR": {
+    "ratio": 1.0,
+    "nombre": "LITHIUM ARGENTINA AG.",
+    "byma": "LAR",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "NXE": {
+    "ratio": 1.0,
+    "nombre": "NEXGEN ENERGY LTD",
+    "byma": "NXE",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ORLY": {
+    "ratio": 222.0,
+    "nombre": "O'REILLY AUTOMOTIVE INC.",
+    "byma": "ORLY",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "TJX": {
+    "ratio": 22.0,
+    "nombre": "TJX COMPANIES INC./THE",
+    "byma": "TJX",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "EQNR": {
+    "ratio": 6.0,
+    "nombre": "EQUINOR ASA",
+    "byma": "EQNR",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "ARM": {
+    "ratio": 27.0,
+    "nombre": "ARM HOLDINGS PLC",
+    "byma": "ARM",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "IBIT": {
+    "ratio": 10.0,
+    "nombre": "ISHARES BITCOIN TRUST",
+    "byma": "IBIT",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "FXI": {
+    "ratio": 5.0,
+    "nombre": "ISHARES CHINA LARGE-CAP ETF",
+    "byma": "FXI",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "IEUR": {
+    "ratio": 11.0,
+    "nombre": "iShares Core MSCI Europe ETF",
+    "byma": "IEUR",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "IBB": {
+    "ratio": 27.0,
+    "nombre": "iShares Nasdaq Biotechnology ETF",
+    "byma": "IBB",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "VEA": {
+    "ratio": 10.0,
+    "nombre": "Vanguard FTSE Developed Markets ETF",
+    "byma": "VEA",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "IVE": {
+    "ratio": 40.0,
+    "nombre": "iShares S&P 500 Value ETF",
+    "byma": "IVE",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "IVW": {
+    "ratio": 20.0,
+    "nombre": "iShares S&P 500 Growth ETF",
+    "byma": "IVW",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "XLC": {
+    "ratio": 19.0,
+    "nombre": "The Communication Services Select Sector SPDR Fund",
+    "byma": "XLC",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "XLY": {
+    "ratio": 43.0,
+    "nombre": "The Consumer Discretionary Select Sector SPDR Fund",
+    "byma": "XLY",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "XLB": {
+    "ratio": 18.0,
+    "nombre": "The Materials Select Sector SPDR Fund",
+    "byma": "XLB",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "XLI": {
+    "ratio": 28.0,
+    "nombre": "The Industrial Select Sector SPDR Fund",
+    "byma": "XLI",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "XLK": {
+    "ratio": 46.0,
+    "nombre": "The Technology Select Sector SPDR Fund",
+    "byma": "XLK",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "XLV": {
+    "ratio": 29.0,
+    "nombre": "The Health Care Select Sector SPDR Fund",
+    "byma": "XLV",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "XLP": {
+    "ratio": 16.0,
+    "nombre": "The Consumer Staples Select Sector SPDR Fund",
+    "byma": "XLP",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "XLRE": {
+    "ratio": 9.0,
+    "nombre": "The Real Estate Select Sector SPDR Fund",
+    "byma": "XLRE",
+    "tipo": "Accion",
+    "fuente": "Comafi"
+  },
+  "DJNJ3-XD004": {
+    "ratio": 1.0,
+    "nombre": "JNJ6.95",
+    "byma": "DJNJ3-XD004",
+    "tipo": "Accion",
+    "fuente": "Comafi"
   }
 }
