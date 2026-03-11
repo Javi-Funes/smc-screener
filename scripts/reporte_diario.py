@@ -196,17 +196,136 @@ def detect_ob_encima(high, low, close, price, sh):
                 return True, round(ob_l, 2)
     return False, None
 
-def detect_fvg(high, low, close):
-    """Fair Value Gap — imbalance de precio sin llenar"""
-    if len(close) < 3:
-        return None
-    # Bullish FVG: low de vela actual > high de vela hace 2 barras
-    if float(low[-1]) > float(high[-3]):
-        return 'BULLISH'
-    # Bearish FVG
-    if float(high[-1]) < float(low[-3]):
-        return 'BEARISH'
-    return None
+def detect_fvg_all(high, low, close, price, lookback=30):
+    """
+    Detecta TODOS los FVGs activos en las ultimas N velas.
+    Un FVG se considera 'activo' si el precio no lo ha llenado todavia.
+    Retorna lista de dicts con tipo, zona y distancia al precio.
+    """
+    fvgs = []
+    n = min(lookback, len(close) - 2)
+    for i in range(2, n + 2):
+        idx = -(i)  # vela central del patron de 3
+        try:
+            h0 = float(high[idx-1])   # vela izquierda
+            l0 = float(low[idx-1])
+            h2 = float(high[idx+1])   # vela derecha
+            l2 = float(low[idx+1])
+        except IndexError:
+            continue
+
+        # Bullish FVG: gap entre high de vela izquierda y low de vela derecha
+        if l2 > h0:
+            gap_low  = round(h0, 2)
+            gap_high = round(l2, 2)
+            # Solo si el precio no llenó el gap
+            if price > gap_low:
+                dist_pct = round((gap_low - price) / price * 100, 2)
+                fvgs.append({
+                    'tipo':     'BULLISH',
+                    'low':      gap_low,
+                    'high':     gap_high,
+                    'mid':      round((gap_low + gap_high) / 2, 2),
+                    'dist_pct': dist_pct,
+                    'relacion': 'DEBAJO' if gap_low < price else 'ENCIMA',
+                })
+
+        # Bearish FVG: gap entre low de vela izquierda y high de vela derecha
+        if h2 < l0:
+            gap_low  = round(h2, 2)
+            gap_high = round(l0, 2)
+            if price < gap_high:
+                dist_pct = round((gap_high - price) / price * 100, 2)
+                fvgs.append({
+                    'tipo':     'BEARISH',
+                    'low':      gap_low,
+                    'high':     gap_high,
+                    'mid':      round((gap_low + gap_high) / 2, 2),
+                    'dist_pct': dist_pct,
+                    'relacion': 'ENCIMA' if gap_high > price else 'DEBAJO',
+                })
+
+    # Eliminar duplicados por nivel similar (diferencia < 0.5%)
+    unique = []
+    for fvg in fvgs:
+        es_dup = any(
+            abs(f['mid'] - fvg['mid']) / fvg['mid'] < 0.005
+            for f in unique
+        )
+        if not es_dup:
+            unique.append(fvg)
+
+    # Ordenar: primero los más cercanos al precio
+    unique.sort(key=lambda x: abs(x['dist_pct']))
+    return unique[:6]  # max 6 FVGs en el reporte
+
+
+def calc_fibonacci_pois(sh, sl, price):
+    """
+    Calcula niveles Fibonacci desde el ultimo impulso relevante.
+    Usa el ultimo swing low -> swing high para retrocesos (compra en pullback).
+    Usa el ultimo swing high -> swing low para extensiones (targets).
+    Incluye: 0.236, 0.382, 0.5, 0.618, 0.65, 0.786
+    """
+    if not sh or not sl:
+        return [], []
+
+    # --- RETROCESOS (zonas de compra) ---
+    # Tomar el ultimo impulso alcista: swing low reciente → swing high reciente
+    # Buscamos el SL mas reciente que este POR DEBAJO del ultimo SH
+    last_sh_idx, last_sh_val = sh[-1]
+    # Encontrar el SL anterior al ultimo SH
+    sl_antes = [(i, v) for i, v in sl if i < last_sh_idx]
+    if not sl_antes:
+        return [], []
+
+    imp_low_idx, imp_low = sl_antes[-1]
+    imp_high = last_sh_val
+    rango_imp = imp_high - imp_low
+
+    niveles_fib = [0.236, 0.382, 0.5, 0.618, 0.65, 0.786]
+    nombres_fib = {
+        0.236: '23.6% — Retroceso menor',
+        0.382: '38.2% — POI moderado',
+        0.500: '50.0% — Equilibrium',
+        0.618: '61.8% — Golden Pocket ⭐',
+        0.650: '65.0% — Golden Pocket ext.',
+        0.786: '78.6% — Ultimo soporte',
+    }
+
+    retrocesos = []
+    for nivel in niveles_fib:
+        precio_fib = round(imp_high - (rango_imp * nivel), 2)
+        dist       = round((precio_fib - price) / price * 100, 2)
+        zona       = 'SOPORTE' if precio_fib < price else 'RESISTENCIA'
+        retrocesos.append({
+            'nivel':      nivel,
+            'nombre':     nombres_fib[nivel],
+            'precio':     precio_fib,
+            'dist_pct':   dist,
+            'zona':       zona,
+            'es_golden':  nivel in [0.618, 0.65],
+        })
+
+    # --- EXTENSIONES (targets de precio) ---
+    # Desde el ultimo SL hacia arriba: 1.272, 1.414, 1.618
+    nombres_ext = {
+        1.272: '127.2% — Extension 1',
+        1.414: '141.4% — Extension 2',
+        1.618: '161.8% — Extension dorada ⭐',
+    }
+    extensiones = []
+    for nivel in [1.272, 1.414, 1.618]:
+        precio_ext = round(imp_low + (rango_imp * nivel), 2)
+        dist       = round((precio_ext - price) / price * 100, 2)
+        extensiones.append({
+            'nivel':    nivel,
+            'nombre':   nombres_ext[nivel],
+            'precio':   precio_ext,
+            'dist_pct': dist,
+        })
+
+    return retrocesos, extensiones
 
 def detect_absorcion(vol, close, high, low):
     """Absorcion institucional: vela con volumen anomalo + cierre fuerte"""
@@ -315,8 +434,13 @@ def analyze(ticker, es_byma=False):
         # ── 3. OB de oferta encima ─────────────────────────────
         ob_enc, ob_lvl = detect_ob_encima(h, l, c, price, sh)
 
-        # ── 4. FVG ─────────────────────────────────────────────
-        fvg = detect_fvg(h, l, c)
+        # ── 4. FVG — todos los activos ─────────────────────────
+        fvgs_all = detect_fvg_all(h, l, c, price)
+        fvg_bull  = any(f['tipo'] == 'BULLISH' for f in fvgs_all)
+        fvg_label = 'BULLISH' if fvg_bull else ('BEARISH' if fvgs_all else None)
+
+        # ── 4b. Fibonacci POIs ─────────────────────────────────
+        fib_retrocesos, fib_extensiones = calc_fibonacci_pois(sh, sl, price)
 
         # ── 5. Absorcion ───────────────────────────────────────
         abs_hit, abs_vol = detect_absorcion(v, c, h, l)
@@ -354,49 +478,52 @@ def analyze(ticker, es_byma=False):
 
         # ── SCORE ──────────────────────────────────────────────
         score = 2  # base: zona + estructura
-        if fvg == 'BULLISH': score += 1
-        if rs_hit:           score += 1
-        if abs_hit:          score += 1
-        if sq_hit:           score += 1
-        if ob_enc:           score -= 1  # penalizacion
+        if fvg_bull:   score += 1
+        if rs_hit:     score += 1
+        if abs_hit:    score += 1
+        if sq_hit:     score += 1
+        if ob_enc:     score -= 1  # penalizacion
 
         if score < SCORE_MINIMO:
             return None
 
         # Señales como lista
         senales = [zona, estructura]
-        if fvg == 'BULLISH': senales.append('FVG-Bull')
-        if rs_hit:           senales.append(f'RS({rs_ratio})')
-        if abs_hit:          senales.append(f'Absorcion({abs_vol}x)')
-        if sq_hit:           senales.append('Squeeze')
-        if ob_enc:           senales.append(f'OB-ENCIMA({ob_lvl})')
+        if fvg_bull:   senales.append('FVG-Bull')
+        if rs_hit:     senales.append(f'RS({rs_ratio})')
+        if abs_hit:    senales.append(f'Absorcion({abs_vol}x)')
+        if sq_hit:     senales.append('Squeeze')
+        if ob_enc:     senales.append(f'OB-ENCIMA({ob_lvl})')
 
         equil = (top + bottom) / 2
 
         return {
-            'ticker':       ticker,
-            'sector':       sector,
-            'score':        score,
-            'zona':         zona,
-            'pct_rango':    round(pct_r, 1),
-            'estructura':   estructura,
-            'precio':       round(price, 2),
-            'swing_high':   round(top, 2),
-            'swing_low':    round(bottom, 2),
-            'equilibrium':  round(equil, 2),
-            'dist_equil':   round((equil - price) / price * 100, 2),
-            'ob_encima':    f'SI ({ob_lvl})' if ob_enc else 'NO',
-            'ob_enc_bool':  ob_enc,
-            'fvg':          fvg or 'None',
-            'rs_ratio':     rs_ratio or '-',
-            'rsi':          rsi,
-            'vol_ratio':    vol_ratio,
-            'abs_vol':      abs_vol or '-',
-            'squeeze':      'SI' if sq_hit else 'NO',
-            'senales':      ' | '.join(senales),
-            'target':       round(price * (1 + TARGET_PCT/100), 2),
-            'stop':         round(price * (1 - STOP_PCT/100), 2),
-            'tv_link':      f'https://www.tradingview.com/chart/?symbol={ticker}',
+            'ticker':           ticker,
+            'sector':           sector,
+            'score':            score,
+            'zona':             zona,
+            'pct_rango':        round(pct_r, 1),
+            'estructura':       estructura,
+            'precio':           round(price, 2),
+            'swing_high':       round(top, 2),
+            'swing_low':        round(bottom, 2),
+            'equilibrium':      round(equil, 2),
+            'dist_equil':       round((equil - price) / price * 100, 2),
+            'ob_encima':        f'SI ({ob_lvl})' if ob_enc else 'NO',
+            'ob_enc_bool':      ob_enc,
+            'fvg':              fvg_label or 'None',
+            'fvgs_all':         fvgs_all,
+            'fib_retrocesos':   fib_retrocesos,
+            'fib_extensiones':  fib_extensiones,
+            'rs_ratio':         rs_ratio or '-',
+            'rsi':              rsi,
+            'vol_ratio':        vol_ratio,
+            'abs_vol':          abs_vol or '-',
+            'squeeze':          'SI' if sq_hit else 'NO',
+            'senales':          ' | '.join(senales),
+            'target':           round(price * (1 + TARGET_PCT/100), 2),
+            'stop':             round(price * (1 - STOP_PCT/100), 2),
+            'tv_link':          f'https://www.tradingview.com/chart/?symbol={ticker}',
         }
 
     except Exception as e:
@@ -485,25 +612,72 @@ def generar_reporte(ccl, ccl_fuente, resultados_cedears,
         medal   = '⭐' if r['zona'] == 'Discount' else '  '
         ob_warn = ' ⚠' if r['ob_enc_bool'] else ''
         dc_warn = '⭐⭐ DOBLE CONFLUENCIA' if es_adr and byma_info else ''
+        etiqueta = r['ticker'] if not r['ticker'].endswith('.BA') else r['ticker']
 
-        lines_r.append(f'  TICKER: {r["ticker"]}  |  Score: {r["score"]}/7  |  {r["sector"]}  {dc_warn}')
+        lines_r.append(f'  TICKER: {etiqueta}  |  Score: {r["score"]}/7  |  {r["sector"]}  {dc_warn}')
         lines_r.append(f'  {"─"*60}')
-        lines_r.append(f'  Precio NYSE:       ${r["precio"]:,.2f} USD')
+        lines_r.append(f'  Precio:            ${r["precio"]:,.2f}')
         lines_r.append(f'  Zona SMC:          {medal} {r["zona"]}  ({r["pct_rango"]:.1f}% del rango)')
         lines_r.append(f'  Swing High:        ${r["swing_high"]:,.2f}   Swing Low: ${r["swing_low"]:,.2f}')
         lines_r.append(f'  Equilibrium:       ${r["equilibrium"]:,.2f}  (imán → +{r["dist_equil"]:.1f}%)')
         lines_r.append(f'  Estructura:        {r["estructura"]}')
         lines_r.append(f'  OB Encima:         {r["ob_encima"]}{ob_warn}')
-        lines_r.append(f'  FVG:               {r["fvg"]}')
         lines_r.append(f'  RS vs Sector:      {r["rs_ratio"]}')
         lines_r.append(f'  Absorcion:         {"SI (" + str(r["abs_vol"]) + "x)" if r["abs_vol"] != "-" else "NO"}')
         lines_r.append(f'  Squeeze:           {r["squeeze"]}')
         lines_r.append(f'  RSI Diario:        {r["rsi"]}')
         lines_r.append(f'  Vol Ratio 20d:     {r["vol_ratio"]}x')
+
+        # ── FVGs con niveles exactos ───────────────────────────
+        fvgs = r.get('fvgs_all', [])
+        if fvgs:
+            lines_r.append(f'  {"─"*25} FVGs ACTIVOS {"─"*22}')
+            fvgs_enc   = [f for f in fvgs if f['relacion'] == 'ENCIMA']
+            fvgs_deb   = [f for f in fvgs if f['relacion'] == 'DEBAJO']
+
+            if fvgs_enc:
+                lines_r.append(f'  FVGs ENCIMA (resistencia / targets):')
+                for f in fvgs_enc[:3]:
+                    tipo_icono = '🔴' if f['tipo'] == 'BEARISH' else '🟢'
+                    lines_r.append(
+                        f'    {tipo_icono} {f["tipo"]:7}  ${f["low"]:,.2f} — ${f["high"]:,.2f}'
+                        f'  (mid: ${f["mid"]:,.2f})  [{f["dist_pct"]:+.1f}%]'
+                    )
+            if fvgs_deb:
+                lines_r.append(f'  FVGs DEBAJO (soporte / ordenes de compra):')
+                for f in fvgs_deb[:3]:
+                    tipo_icono = '🟢' if f['tipo'] == 'BULLISH' else '🔴'
+                    lines_r.append(
+                        f'    {tipo_icono} {f["tipo"]:7}  ${f["low"]:,.2f} — ${f["high"]:,.2f}'
+                        f'  (mid: ${f["mid"]:,.2f})  [{f["dist_pct"]:+.1f}%]'
+                    )
+        else:
+            lines_r.append(f'  FVG:               Sin gaps activos recientes')
+
+        # ── Fibonacci POIs ─────────────────────────────────────
+        fibs_r = r.get('fib_retrocesos', [])
+        fibs_e = r.get('fib_extensiones', [])
+        if fibs_r:
+            lines_r.append(f'  {"─"*22} FIBONACCI POIs {"─"*23}')
+            lines_r.append(f'  Retrocesos (zonas de compra):')
+            for f in fibs_r:
+                star    = ' ⭐' if f['es_golden'] else ''
+                actual  = ' ← PRECIO AQUI' if abs(f['dist_pct']) < 1.0 else ''
+                zona_ic = '🟢' if f['zona'] == 'SOPORTE' else '🔴'
+                lines_r.append(
+                    f'    {zona_ic} {f["nombre"]:<30}  ${f["precio"]:>10,.2f}  [{f["dist_pct"]:+.1f}%]{star}{actual}'
+                )
+            lines_r.append(f'  Extensiones (targets de precio):')
+            for f in fibs_e:
+                lines_r.append(
+                    f'    🎯 {f["nombre"]:<30}  ${f["precio"]:>10,.2f}  [{f["dist_pct"]:+.1f}%]'
+                )
+
+        # ── Trade ──────────────────────────────────────────────
         lines_r.append(f'  {"─"*35} TRADE {"─"*18}')
-        lines_r.append(f'  Entrada:           ${r["precio"]:,.2f} USD')
-        lines_r.append(f'  Stop:              ${r["stop"]:,.2f} USD  (-{STOP_PCT}%)')
-        lines_r.append(f'  Target:            ${r["target"]:,.2f} USD  (+{TARGET_PCT}%)')
+        lines_r.append(f'  Entrada:           ${r["precio"]:,.2f}')
+        lines_r.append(f'  Stop:              ${r["stop"]:,.2f}  (-{STOP_PCT}%)')
+        lines_r.append(f'  Target:            ${r["target"]:,.2f}  (+{TARGET_PCT}%)')
         lines_r.append(f'  R/R:               {TARGET_PCT/STOP_PCT:.1f}')
         lines_r.append(f'  Ver en TV:         {r["tv_link"]}')
 
