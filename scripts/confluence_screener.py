@@ -1,8 +1,8 @@
 """
-SMC CONFLUENCE SCREENER v1.5 - THE BUNKER EDITION
+SMC CONFLUENCE SCREENER v1.6 - THE BUNKER EDITION (API FIX)
 =================================================
 Lead Indicators (USA) -> Execution (Argentina)
-Integrates: SMC + FVG + Momentum + OB Detection
+Integrates: SMC + FVG + Momentum + OB Detection + API Fault Tolerance
 """
 
 import yfinance as yf
@@ -44,6 +44,7 @@ DATA_PERIOD_D       = '1y'
 DATA_PERIOD_H       = '1mo'
 BATCH_SIZE          = 10
 SLEEP_BETWEEN       = 1.5
+SECTORES_EXCLUIR    = ['Utilities', 'Real Estate']
 
 # ============================================================
 # MAPEO SECTOR → ETF & TICKERS LEAD INDICATORS
@@ -54,7 +55,8 @@ SECTOR_ETF = {
     'Industrials': 'XLI', 'Basic Materials': 'XLB', 'Communication Services': 'XLC'
 }
 
-ADRS_ARG = ['GGAL', 'YPF', 'PAMP', 'BMA', 'CEPU', 'LOMA', 'CRESY', 'EDN', 'SUPV', 'TGS']
+# CORRECCIÓN: PAMP en USA es PAM
+ADRS_ARG = ['GGAL', 'YPF', 'PAM', 'BMA', 'CEPU', 'LOMA', 'CRESY', 'EDN', 'SUPV', 'TGS']
 
 BLUE_CHIPS = [
     'AAPL', 'AMZN', 'MSFT', 'NVDA', 'META', 'GOOGL', 'TSLA', 'MELI', 'KO', 'PEP', 
@@ -118,13 +120,19 @@ def detect_ob_encima(high, low, close, price, swing_highs):
 
 def analyze_ticker(ticker):
     try:
-        tk = yf.Ticker(ticker)
-        info = tk.info
-        sector = info.get('sector', 'Unknown')
+        # --- BLINDAJE CONTRA BUG 404 DE YFINANCE ---
+        sector = 'Unknown'
+        try:
+            tk = yf.Ticker(ticker)
+            sector = tk.info.get('sector', 'Unknown')
+        except:
+            pass # Si Yahoo falla al dar la info, ignoramos y seguimos operando.
+
         if sector in SECTORES_EXCLUIR: return None
 
+        # Descarga de datos de precios (Esto sí funciona estable)
         df = yf.download(ticker, period=DATA_PERIOD_D, interval='1d', progress=False, auto_adjust=True)
-        if len(df) < SWING_LENGTH_D + 10: return None
+        if df.empty or len(df) < SWING_LENGTH_D + 10: return None
         
         c = to_arr(df['Close'])
         h = to_arr(df['High'])
@@ -135,7 +143,7 @@ def analyze_ticker(ticker):
         # 1. SMC Zonas
         sh, sl = find_swings(h, l, SWING_LENGTH_D)
         if not sh or not sl: return None
-        top, bottom = max(v for _, v in sh[-5:]), min(v for _, v in sl[-5:])
+        top, bottom = max(val for _, val in sh[-5:]), min(val for _, val in sl[-5:])
         zones = get_zones(top, bottom)
         
         in_disc = zones['discount'][0] <= price <= zones['discount'][1]
@@ -159,7 +167,7 @@ def analyze_ticker(ticker):
         if rs >= RS_RATIO_MIN: score += 1
         
         avg_v = np.mean(v[-21:-1])
-        if v[-1]/avg_v >= ABSORCION_VOL_RATIO: score += 1
+        if avg_v > 0 and (v[-1]/avg_v) >= ABSORCION_VOL_RATIO: score += 1
         
         rsi = calculate_rsi(df['Close'])[-1]
         if rsi < 40: score += 1
@@ -176,7 +184,9 @@ def analyze_ticker(ticker):
             'Stop': round(price * (1-STOP_PCT/100), 2), 'Target': round(price * (1+TARGET_PCT/100), 2),
             'View': f'https://tradingview.com/symbols/{ticker}'
         }
-    except: return None
+    except Exception as e: 
+        # Ya no fallará en silencio total, pero pasará al siguiente ticker limpiamente.
+        return None
 
 # ============================================================
 # EJECUCIÓN
@@ -186,15 +196,19 @@ if __name__ == '__main__':
     print(f"--- SMC Búnker Screener | {datetime.now().strftime('%Y-%m-%d %H:%M')} ---")
     results = []
     for i, t in enumerate(ALL_TICKERS):
-        print(f"[{i+1}/{len(ALL_TICKERS)}] Analizando {t}...", end='\r')
+        print(f"[{i+1}/{len(ALL_TICKERS)}] Analizando {t}...    ", end='\r')
         res = analyze_ticker(t)
         if res: results.append(res)
+        
+        # Respetar Rate Limits de Yahoo
+        if (i + 1) % BATCH_SIZE == 0:
+            time.sleep(SLEEP_BETWEEN)
     
     if results:
         df_final = pd.DataFrame(results).sort_values(by='Score', ascending=False)
         os.makedirs('results', exist_ok=True)
         df_final.to_csv('results/perlas_usa_argentina.csv', index=False)
-        print(f"\n\nÉXITO: {len(results)} perlas encontradas.")
+        print(f"\n\nÉXITO: {len(results)} perlas encontradas y guardadas en 'results/perlas_usa_argentina.csv'.")
         print(df_final[['Ticker', 'Score', 'Precio', 'OB_Encima', 'Zona']].head(10).to_string(index=False))
     else:
-        print("\n\nSin hits hoy. El mercado está fuera de zona de valor.")
+        print("\n\nSin hits hoy. El mercado está fuera de zona de valor o lateral.")
