@@ -1,0 +1,33 @@
+name: SMC Confluence Screener
+
+on:
+  schedule:
+    - cron: '0 13 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar dependencias
+        run: pip install yfinance pandas numpy
+      - name: Correr Confluence Screener
+        run: python scripts/confluence_screener.py
+      - name: Subir resultados
+        uses: actions/upload-artifact@v4
+        with:
+          name: confluence-results
+          path: results/
+          retention-days: 30
+      - name: Guardar en repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add results/ || true
+          git diff --staged --quiet || git commit -m "Update confluence results"
+          git push || true
