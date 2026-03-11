@@ -127,6 +127,25 @@ ALL_TICKERS = sorted(list(set(SP500 + NASDAQ100)))
 # FUNCIONES BASE SMC
 # ============================================================
 
+def detect_fvg(df):
+    # Un FVG alcista ocurre si el Low de la vela 3 es mayor al High de la vela 1
+    # Un FVG bajista ocurre si el High de la vela 3 es menor al Low de la vela 1
+    
+    last_3 = df.tail(3)
+    c1_high = last_3.iloc[0]['High']
+    c1_low = last_3.iloc[0]['Low']
+    c3_high = last_3.iloc[2]['High']
+    c3_low = last_3.iloc[2]['Low']
+    
+    fvg_bullish = c3_low > c1_high
+    fvg_bearish = c3_high < c1_low
+    
+    if fvg_bullish:
+        return "BULLISH_FVG"
+    elif fvg_bearish:
+        return "BEARISH_FVG"
+    return None
+
 def check_liquidity(ticker_data):
     # Calculamos el volumen promedio de los últimos 10 días en USD
     avg_volume = ticker_data['Volume'].tail(10).mean()
