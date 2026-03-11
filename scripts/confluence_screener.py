@@ -72,32 +72,31 @@ SECTOR_ETF = {
 }
 
 # ============================================================
-# TICKERS OPERABLES EN ARGENTINA (CON VOLUMEN REAL)
+# TICKERS - LEAD INDICATORS (USA MARKET)
 # ============================================================
 
-# --- PANEL LÍDER / GENERAL (Acciones locales) ---
-MERVAL = [
-    'GGAL.BA', 'YPFD.BA', 'PAMP.BA', 'BMA.BA', 'CEPU.BA', 'LOMA.BA', 'ALUA.BA', 
-    'TXAR.BA', 'CRES.BA', 'EDN.BA', 'SUPV.BA', 'COME.BA', 'METR.BA', 'TGSU2.BA', 'TGNO4.BA'
+# --- ADRs Argentinos (Donde operan los fondos internacionales) ---
+ADRS_ARG = [
+    'GGAL', 'YPF', 'PAMP', 'BMA', 'CEPU', 'LOMA', 'CRESY', 'EDN', 'SUPV', 'TGS'
 ]
 
-# --- CEDEARS TOP 85 (Liquidez comprobada para órdenes de $5,000 USD+) ---
-CEDEARS = [
-    'AAPL.BA', 'AMZN.BA', 'MSFT.BA', 'NVDA.BA', 'META.BA', 'GOOGL.BA', 'TSLA.BA', 
-    'MELI.BA', 'KO.BA', 'PEP.BA', 'JNJ.BA', 'PFE.BA', 'WMT.BA', 'MCD.BA', 'DIS.BA', 
-    'NFLX.BA', 'GOLD.BA', 'BABA.BA', 'VALE.BA', 'V.BA', 'MA.BA', 'PYPL.BA', 'NKE.BA', 
-    'CAT.BA', 'JPM.BA', 'BRKB.BA', 'CVX.BA', 'XOM.BA', 'T.BA', 'VZ.BA', 'INTC.BA', 
-    'AMD.BA', 'BA.BA', 'GE.BA', 'IBM.BA', 'WFC.BA', 'C.BA', 'MS.BA', 'GS.BA', 'HMY.BA',
-    'AUY.BA', 'PAAS.BA', 'X.BA', 'NEM.BA', 'FCX.BA', 'TS.BA', 'ERJ.BA', 'ABEV.BA',
-    'BIOX.BA', 'DESP.BA', 'GLOB.BA', 'JD.BA', 'BIDU.BA', 'PYPL.BA', 'SQ.BA', 'COIN.BA',
-    'SHOP.BA', 'ARKK.BA', 'SPY.BA', 'QQQ.BA', 'DIA.BA', 'IWM.BA', 'EEM.BA', 'EWZ.BA',
-    'XLF.BA', 'XLK.BA', 'XLE.BA', 'XLV.BA', 'XLY.BA', 'XLP.BA', 'XLI.BA', 'XLB.BA',
-    'AVGO.BA', 'QCOM.BA', 'MU.BA', 'AMAT.BA', 'CRM.BA', 'ADBE.BA', 'ORCL.BA', 'CSCO.BA',
-    'UBER.BA', 'ABNB.BA', 'F.BA', 'GM.BA', 'COST.BA', 'SBUX.BA'
+# --- CEDEARs Top Liquidez (USA Direct) ---
+BLUE_CHIPS = [
+    'AAPL', 'AMZN', 'MSFT', 'NVDA', 'META', 'GOOGL', 'TSLA', 'MELI', 'KO', 'PEP', 
+    'JNJ', 'PFE', 'WMT', 'MCD', 'DIS', 'NFLX', 'GOLD', 'BABA', 'VALE', 'V', 
+    'MA', 'PYPL', 'NKE', 'CAT', 'JPM', 'BRK-B', 'CVX', 'XOM', 'T', 'VZ', 
+    'INTC', 'AMD', 'BA', 'GE', 'IBM', 'WFC', 'C', 'MS', 'GS', 'HMY',
+    'AUY', 'PAAS', 'X', 'NEM', 'FCX', 'TS', 'ERJ', 'ABEV', 'DESP', 'GLOB', 
+    'JD', 'BIDU', 'SQ', 'COIN', 'SHOP', 'AVGO', 'QCOM', 'MU', 'AMAT', 'CRM', 
+    'ADBE', 'ORCL', 'CSCO', 'UBER', 'ABNB', 'F', 'GM', 'COST', 'SBUX'
 ]
 
-# Combinamos y ordenamos
-ALL_TICKERS = sorted(list(set(MERVAL + CEDEARS)))
+# --- ETFs (Para medir fuerza relativa RS) ---
+ETFS_LIQUIDOS = [
+    'SPY', 'QQQ', 'DIA', 'IWM', 'EEM', 'EWZ', 'XLF', 'XLK', 'XLE', 'XLV', 'XLY', 'XLP', 'XLI', 'XLB'
+]
+
+ALL_TICKERS = sorted(list(set(ADRS_ARG + BLUE_CHIPS + ETFS_LIQUIDOS)))
 
 # ============================================================
 # AJUSTE DE PARÁMETROS PARA MERCADO ARGENTINO
