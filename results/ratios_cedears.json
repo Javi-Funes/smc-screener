@@ -1,0 +1,395 @@
+{
+  "_meta": {
+    "actualizado": "2026-03-11 21:09",
+    "total_tickers": 55,
+    "fuentes": {
+      "comafi": 0,
+      "cajavaloroes": 55
+    }
+  },
+  "SPY": {
+    "ratio": 20.0,
+    "nombre": "SPDR S&P 500",
+    "byma": "SPY",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "QQQ": {
+    "ratio": 20.0,
+    "nombre": "INVESCO QQQ TRUST",
+    "byma": "QQQ",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "IWM": {
+    "ratio": 10.0,
+    "nombre": "ISHARES TRUST RUSSELL 2000",
+    "byma": "IWM",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "EEM": {
+    "ratio": 5.0,
+    "nombre": "ISHARES MSCI EMERGING MARKET",
+    "byma": "EEM",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "XLF": {
+    "ratio": 2.0,
+    "nombre": "FINANCIAL SELECT SECTOR SPDR FUND",
+    "byma": "XLF",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "XLE": {
+    "ratio": 2.0,
+    "nombre": "ENERGY SELECT SECTOR SPDR FUND",
+    "byma": "XLE",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "DIA": {
+    "ratio": 20.0,
+    "nombre": "SPDR DOW JONES INDUSTRIAL",
+    "byma": "DIA",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "EWZ": {
+    "ratio": 2.0,
+    "nombre": "ISHARES MSCI BRAZIL CAP",
+    "byma": "EWZ",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "ARKK": {
+    "ratio": 10.0,
+    "nombre": "ARK INNOVATION",
+    "byma": "ARKK",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "SH": {
+    "ratio": 8.0,
+    "nombre": "PROSHARES  SHORT S&P500",
+    "byma": "SH",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "GLD": {
+    "ratio": 50.0,
+    "nombre": "ETF SPDR GOLD TRUST",
+    "byma": "GLD",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "ETHA": {
+    "ratio": 5.0,
+    "nombre": "ISHARES ETHEREUM TR ETF",
+    "byma": "ETHA",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "URA": {
+    "ratio": 5.0,
+    "nombre": "GLOBAL X URANIUM ETF",
+    "byma": "URA",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "SMH": {
+    "ratio": 50.0,
+    "nombre": "VAN ECK SEMICONDUCTOR ETF",
+    "byma": "SMH",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "SPXL": {
+    "ratio": 25.0,
+    "nombre": "DIREXION DAILY S&P 500 BULL 3X",
+    "byma": "SPXL",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "XLU": {
+    "ratio": 15.0,
+    "nombre": "UTILITIES SELECT SECTOR SPDR FUND",
+    "byma": "XLU",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "CIBR": {
+    "ratio": 10.0,
+    "nombre": "FIRST TRUST NASDAQ CYBERSECURITY",
+    "byma": "CIBR",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "TQQQ": {
+    "ratio": 25.0,
+    "nombre": "PROSHARES ULTRAPRO QQQ",
+    "byma": "TQQQ",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "VXX": {
+    "ratio": 5.0,
+    "nombre": "IPATH SERIES B S&P 500 VIX",
+    "byma": "VXX",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "ITA": {
+    "ratio": 50.0,
+    "nombre": "ISHARES US AEROSPACE & DEFENSE ETF",
+    "byma": "ITA",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "F": {
+    "ratio": 1.0,
+    "nombre": "FORD MOTOR COMPANY",
+    "byma": "F",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "RBLX": {
+    "ratio": 2.0,
+    "nombre": "ROBLOX CORP.",
+    "byma": "RBLX",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "UAL": {
+    "ratio": 5.0,
+    "nombre": "UNITED AIRLINES HOLDINGS INC.",
+    "byma": "UAL",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "SATL": {
+    "ratio": 1.0,
+    "nombre": "SATELLOGIC INC.",
+    "byma": "SATL",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "MU": {
+    "ratio": 5.0,
+    "nombre": "MICRON TECHNOLOGY INC",
+    "byma": "MU",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "OXY": {
+    "ratio": 5.0,
+    "nombre": "OCCIDENTAL PETROLEUM CORP.",
+    "byma": "OXY",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "UBER": {
+    "ratio": 2.0,
+    "nombre": "UBER TECHNOLOGIES INC.",
+    "byma": "UBER",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "UPST": {
+    "ratio": 5.0,
+    "nombre": "UPSTART HLDGS INC",
+    "byma": "UPST",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "PANW": {
+    "ratio": 50.0,
+    "nombre": "PALO ALTO NETWORKS INC",
+    "byma": "PANW",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "MOS": {
+    "ratio": 5.0,
+    "nombre": "THE MOSAIC CO",
+    "byma": "MOS",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "MSTR": {
+    "ratio": 20.0,
+    "nombre": "MICROSTRATEGY INC CL A NEW",
+    "byma": "MSTR",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "SI": {
+    "ratio": 10.0,
+    "nombre": "SILVERGATE BANCORP",
+    "byma": "SI",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "BITF": {
+    "ratio": 0.2,
+    "nombre": "BITFARMS LTD.",
+    "byma": "BITF",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "HUT": {
+    "ratio": 0.2,
+    "nombre": "HUT 8 MINING CORP.",
+    "byma": "HUT",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "ABNB": {
+    "ratio": 15.0,
+    "nombre": "AIRBNB INC",
+    "byma": "ABNB",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "JMIA": {
+    "ratio": 1.0,
+    "nombre": "ADR JUMIA TECHNOLOGIES AG",
+    "byma": "JMIA",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "VALE3": {
+    "ratio": 1.0,
+    "nombre": "VALE S.A.",
+    "byma": "VALE3",
+    "tipo": "Brasil",
+    "fuente": "CajaValores"
+  },
+  "PETR3": {
+    "ratio": 1.0,
+    "nombre": "PETROBRAS - PETROLEO BRASILERO S.A.",
+    "byma": "PETR3",
+    "tipo": "Brasil",
+    "fuente": "CajaValores"
+  },
+  "BBDC3": {
+    "ratio": 1.0,
+    "nombre": "BANCO BRADESCO S.A.",
+    "byma": "BBDC3",
+    "tipo": "Brasil",
+    "fuente": "CajaValores"
+  },
+  "MGLU3": {
+    "ratio": 1.0,
+    "nombre": "MAGAZINE LUIZA S.A.",
+    "byma": "MGLU3",
+    "tipo": "Brasil",
+    "fuente": "CajaValores"
+  },
+  "ITUB3": {
+    "ratio": 1.0,
+    "nombre": "BANCO ITAÚ UNIBANCO S.A.",
+    "byma": "ITUB3",
+    "tipo": "Brasil",
+    "fuente": "CajaValores"
+  },
+  "PRIO3": {
+    "ratio": 2.0,
+    "nombre": "PETRO RIO S.A.",
+    "byma": "PRIO3",
+    "tipo": "Brasil",
+    "fuente": "CajaValores"
+  },
+  "BBAS3": {
+    "ratio": 2.0,
+    "nombre": "BANCO DO BRASIL S.A.",
+    "byma": "BBAS3",
+    "tipo": "Brasil",
+    "fuente": "CajaValores"
+  },
+  "RENT3": {
+    "ratio": 2.0,
+    "nombre": "LOCALIZA RENT A CAR S.A.",
+    "byma": "RENT3",
+    "tipo": "Brasil",
+    "fuente": "CajaValores"
+  },
+  "SUZB3": {
+    "ratio": 1.0,
+    "nombre": "SUZANO S.A.",
+    "byma": "SUZB3",
+    "tipo": "Brasil",
+    "fuente": "CajaValores"
+  },
+  "ABEV3": {
+    "ratio": 1.0,
+    "nombre": "AMBEV S.A.",
+    "byma": "ABEV3",
+    "tipo": "Brasil",
+    "fuente": "CajaValores"
+  },
+  "HAPV3": {
+    "ratio": 1.0,
+    "nombre": "HAPVIDA PARTICIPACOES E INVESTIMENTOS S.A.",
+    "byma": "HAPV3",
+    "tipo": "Brasil",
+    "fuente": "CajaValores"
+  },
+  "LREN3": {
+    "ratio": 1.0,
+    "nombre": "LOJAS RENNER S.A.",
+    "byma": "LREN3",
+    "tipo": "Brasil",
+    "fuente": "CajaValores"
+  },
+  "CSNA3": {
+    "ratio": 1.0,
+    "nombre": "COMPANHIA SIDERÚRGICA NACIONAL S.A.",
+    "byma": "CSNA3",
+    "tipo": "Brasil",
+    "fuente": "CajaValores"
+  },
+  "BPAC11": {
+    "ratio": 1.0,
+    "nombre": "BANCO BTG PACTUAL S.A. UNIT",
+    "byma": "BPA11",
+    "tipo": "Brasil",
+    "fuente": "CajaValores"
+  },
+  "NATU3": {
+    "ratio": 1.0,
+    "nombre": "NATURA COSMETICOS SA",
+    "byma": "NATU3",
+    "tipo": "Brasil",
+    "fuente": "CajaValores"
+  },
+  "WEGE3": {
+    "ratio": 1.0,
+    "nombre": "WEG S.A.",
+    "byma": "WEGE3",
+    "tipo": "Brasil",
+    "fuente": "CajaValores"
+  },
+  "SBSP3": {
+    "ratio": 1.0,
+    "nombre": "CIA SANEAMENTO BASICO DE SP",
+    "byma": "SBSP3",
+    "tipo": "Brasil",
+    "fuente": "CajaValores"
+  },
+  "VIVT3": {
+    "ratio": 1.0,
+    "nombre": "TELEFONICA BRASIL S.A.",
+    "byma": "VIVT3",
+    "tipo": "Brasil",
+    "fuente": "CajaValores"
+  },
+  "TIMS3": {
+    "ratio": 1.0,
+    "nombre": "TIM S.A.",
+    "byma": "TIMS3",
+    "tipo": "Brasil",
+    "fuente": "CajaValores"
+  }
+}
