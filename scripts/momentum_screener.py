@@ -471,14 +471,15 @@ def print_sector_summary(results_df, spy_data):
     if spy_data is None:
         return
 
-    spy_ret = float(spy_data['Close'].iloc[-1]) / float(spy_data['Close'].iloc[-RS_DIAS]) - 1
+    spy_close_arr = np.array(spy_data['Close']).flatten()
+    spy_ret = float(spy_close_arr[-1]) / float(spy_close_arr[-RS_DIAS]) - 1
 
     rows = []
     for sector, etf in SECTOR_ETF.items():
         if etf in ref_data:
-            etf_close = ref_data[etf]['Close']
+            etf_close = np.array(ref_data[etf]['Close']).flatten()
             if len(etf_close) >= RS_DIAS:
-                etf_ret  = float(etf_close.iloc[-1]) / float(etf_close.iloc[-RS_DIAS]) - 1
+                etf_ret  = float(etf_close[-1]) / float(etf_close[-RS_DIAS]) - 1
                 rs_ratio = (1 + etf_ret) / (1 + spy_ret) if (1 + spy_ret) != 0 else 0
                 rows.append({
                     'Sector': sector,
