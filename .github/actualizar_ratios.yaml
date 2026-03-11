@@ -1,0 +1,44 @@
+name: Actualizar Ratios CEDEARs
+
+on:
+  schedule:
+    # Domingos 8AM Argentina (UTC-3) = 11:00 UTC
+    - cron: '0 11 * * 0'
+  workflow_dispatch:  # permite correr manualmente
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+
+      - name: Setup Python
+        uses: actions/setup-python@v5.4.0
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: pip install requests pandas openpyxl
+
+      - name: Actualizar ratios
+        run: python scripts/actualizar_ratios.py
+
+      - name: Subir ratios como artefacto
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: ratios-cedears-${{ github.run_number }}
+          path: results/
+          retention-days: 90
+
+      - name: Commit ratios al repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add results/ratios_cedears.json results/ratios_cedears.csv
+          git diff --staged --quiet || git commit -m "chore: actualizar ratios CEDEARs [$(date +'%Y-%m-%d')]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
