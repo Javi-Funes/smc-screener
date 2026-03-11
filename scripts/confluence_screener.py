@@ -72,60 +72,112 @@ SECTOR_ETF = {
 }
 
 # ============================================================
-# TICKERS
+# TICKERS OPERABLES EN ARGENTINA (CON VOLUMEN REAL)
 # ============================================================
-SP500 = [
-    'MMM','ABT','ABBV','ACN','ADBE','AMD','AFL','A','APD','ABNB','ALB',
-    'ALGN','ALL','GOOGL','GOOG','MO','AMZN','AEE','AAL','AEP','AXP',
-    'AIG','AMT','AWK','AMP','AME','AMGN','APH','ADI','AON','APA','AAPL','AMAT',
-    'APTV','ACGL','ADM','ANET','AJG','T','ATO','ADSK','ADP','AZO','AVB','AVY',
-    'AXON','BKR','BALL','BAC','BK','BBWI','BAX','BDX','BBY','BIIB','BLK','BX',
-    'BA','BSX','BMY','AVGO','BR','BRO','BG','CDNS','CPT','CPB','COF','CAH','KMX','CCL',
-    'CARR','CAT','CBOE','CBRE','CDW','CE','COR','CNC','CF','CRL','SCHW','CHTR',
-    'CVX','CMG','CB','CHD','CI','CINF','CTAS','CSCO','C','CFG','CLX','CME','CMS','KO',
-    'CTSH','CL','CMCSA','CAG','COP','ED','STZ','CEG','COO','CPRT','GLW','CTVA','CSGP',
-    'COST','CTRA','CCI','CSX','CMI','CVS','DHI','DHR','DRI','DVA','DE','DAL','DVN',
-    'DXCM','FANG','DLR','DG','DLTR','D','DPZ','DOV','DOW','DTE','DUK','DD',
-    'EMN','ETN','EBAY','ECL','EIX','EW','EA','ELV','LLY','EMR','ENPH','ETR','EOG',
-    'EQT','EFX','EQIX','EQR','ESS','EL','ETSY','EG','ES','EXC','EXPE','EXPD',
-    'EXR','XOM','FFIV','FDS','FICO','FAST','FRT','FDX','FIS','FITB','FSLR','FE',
-    'FMC','F','FTNT','FTV','BEN','FCX','GRMN','IT','GE','GEHC','GEN','GNRC','GD','GIS',
-    'GM','GPC','GILD','GPN','GL','GDDY','GS','HAL','HIG','HAS','HCA','HSIC','HSY',
-    'HPE','HLT','HOLX','HD','HON','HRL','HST','HWM','HPQ','HUBB','HUM','HBAN','HII',
-    'IBM','IEX','IDXX','ITW','INCY','IR','INTC','ICE','IFF','IP','IPG','INTU','ISRG',
-    'IVZ','INVH','IQV','IRM','JBHT','JBL','J','JNJ','JCI','JPM','JNPR','K',
-    'KDP','KEY','KEYS','KMB','KIM','KMI','KLAC','KHC','KR','LHX','LH','LRCX','LW',
-    'LVS','LDOS','LEN','LIN','LYV','LKQ','LMT','L','LOW','LULU','LYB','MTB','MRO',
-    'MPC','MAR','MMC','MLM','MAS','MA','MTCH','MKC','MCD','MCK','MDT','MRK',
-    'META','MET','MTD','MGM','MCHP','MU','MSFT','MAA','MRNA','MHK','MOH','TAP','MDLZ',
-    'MPWR','MNST','MCO','MS','MOS','MSI','MSCI','NDAQ','NTAP','NEE','NKE','NEM','NI',
-    'NFLX','NWL','NUE','NVDA','NVR','NXPI','ORLY','OXY','ODFL','OMC','ON','OKE','ORCL',
-    'OTIS','PCAR','PKG','PANW','PARA','PH','PAYX','PAYC','PYPL','PNR','PEP','PFE','PCG',
-    'PM','PSX','PNW','PNC','POOL','PPG','PPL','PFG','PG','PGR','PLD','PRU','PEG','PTC',
-    'PSA','PHM','PWR','QCOM','DGX','RL','RJF','RTX','O','REG','REGN','RF','RSG','RMD',
-    'ROK','ROL','ROP','ROST','RCL','SPGI','CRM','SBAC','SLB','STX','SRE','NOW','SHW',
-    'SPG','SWKS','SJM','SNA','SO','LUV','SWK','SBUX','STT','STLD','STE','SYK','SYF',
-    'SNPS','SYY','TMUS','TROW','TTWO','TPR','TRGP','TGT','TEL','TDY','TFX','TER','TSLA',
-    'TXN','TXT','TMO','TJX','TSCO','TT','TDG','TRV','TRMB','TFC','TYL','TSN','USB',
-    'UBER','UDR','ULTA','UNP','UAL','UPS','URI','UNH','UHS','VLO','VTR','VRSN','VRSK',
-    'VZ','VRTX','VTRS','VICI','V','VST','VMC','WM','WAT','WEC','WFC','WELL','WST',
-    'WDC','WHR','WMB','WTW','GWW','WYNN','XEL','XYL','YUM','ZBRA','ZBH','ZTS'
+
+# --- PANEL LÍDER / GENERAL (Acciones locales) ---
+MERVAL = [
+    'GGAL.BA', 'YPFD.BA', 'PAMP.BA', 'BMA.BA', 'CEPU.BA', 'LOMA.BA', 'ALUA.BA', 
+    'TXAR.BA', 'CRES.BA', 'EDN.BA', 'SUPV.BA', 'COME.BA', 'METR.BA', 'TGSU2.BA', 'TGNO4.BA'
 ]
-NASDAQ100 = [
-    'ADBE','AMD','ABNB','GOOGL','GOOG','AMZN','AMGN','ADI','AAPL','AMAT',
-    'ASML','TEAM','ADSK','ADP','AXON','BIIB','BKNG','AVGO','CDNS','CDW','CHTR','CTAS',
-    'CSCO','CTSH','CMCSA','CEG','CPRT','CSGP','COST','CRWD','CSX','DDOG','DXCM','FANG',
-    'DLTR','EBAY','EA','EXC','FAST','FTNT','GILD','HON','IDXX','INTC','INTU','ISRG',
-    'KDP','KLAC','KHC','LRCX','LULU','MAR','MRVL','MELI','META','MCHP','MU','MSFT',
-    'MRNA','MDLZ','MDB','MNST','NFLX','NVDA','NXPI','ORLY','ON','PCAR','PANW','PAYX',
-    'PYPL','PEP','QCOM','REGN','ROP','ROST','SBUX','SNPS','TTWO','TMUS','TSLA',
-    'TXN','TTD','VRSK','VRTX','WDAY','XEL','ZS'
+
+# --- CEDEARS TOP 85 (Liquidez comprobada para órdenes de $5,000 USD+) ---
+CEDEARS = [
+    'AAPL.BA', 'AMZN.BA', 'MSFT.BA', 'NVDA.BA', 'META.BA', 'GOOGL.BA', 'TSLA.BA', 
+    'MELI.BA', 'KO.BA', 'PEP.BA', 'JNJ.BA', 'PFE.BA', 'WMT.BA', 'MCD.BA', 'DIS.BA', 
+    'NFLX.BA', 'GOLD.BA', 'BABA.BA', 'VALE.BA', 'V.BA', 'MA.BA', 'PYPL.BA', 'NKE.BA', 
+    'CAT.BA', 'JPM.BA', 'BRKB.BA', 'CVX.BA', 'XOM.BA', 'T.BA', 'VZ.BA', 'INTC.BA', 
+    'AMD.BA', 'BA.BA', 'GE.BA', 'IBM.BA', 'WFC.BA', 'C.BA', 'MS.BA', 'GS.BA', 'HMY.BA',
+    'AUY.BA', 'PAAS.BA', 'X.BA', 'NEM.BA', 'FCX.BA', 'TS.BA', 'ERJ.BA', 'ABEV.BA',
+    'BIOX.BA', 'DESP.BA', 'GLOB.BA', 'JD.BA', 'BIDU.BA', 'PYPL.BA', 'SQ.BA', 'COIN.BA',
+    'SHOP.BA', 'ARKK.BA', 'SPY.BA', 'QQQ.BA', 'DIA.BA', 'IWM.BA', 'EEM.BA', 'EWZ.BA',
+    'XLF.BA', 'XLK.BA', 'XLE.BA', 'XLV.BA', 'XLY.BA', 'XLP.BA', 'XLI.BA', 'XLB.BA',
+    'AVGO.BA', 'QCOM.BA', 'MU.BA', 'AMAT.BA', 'CRM.BA', 'ADBE.BA', 'ORCL.BA', 'CSCO.BA',
+    'UBER.BA', 'ABNB.BA', 'F.BA', 'GM.BA', 'COST.BA', 'SBUX.BA'
 ]
-ALL_TICKERS = sorted(list(set(SP500 + NASDAQ100)))
+
+# Combinamos y ordenamos
+ALL_TICKERS = sorted(list(set(MERVAL + CEDEARS)))
+
+# ============================================================
+# AJUSTE DE PARÁMETROS PARA MERCADO ARGENTINO
+# ============================================================
+
+# Al usar CEDEARS, el spread es mayor. Ajustamos el Stop Loss para evitar barridas por ruido
+STOP_PCT = 1.5  # Aumentamos de 0.5 a 1.5 por volatilidad del CCL y spread
+TARGET_PCT = 3.0 # Buscamos un ratio 2:1
+
+print(f"Screener listo para analizar {len(ALL_TICKERS)} activos con liquidez en Argentina.")
 
 # ============================================================
 # FUNCIONES BASE SMC
 # ============================================================
+def get_rsi(series, periods=14):
+    delta = series.diff()
+    gain = (delta.where(delta > 0, 0)).rolling(window=periods).mean()
+    loss = (-delta.where(delta < 0, 0)).rolling(window=periods).mean()
+    rs = gain / loss
+    return 100 - (100 / (1 + rs))
+
+def analyze_structure(df):
+    """Detecta si hay Higher Highs (HH) y Higher Lows (HL)"""
+    # Usamos el Swing Length de tus parámetros
+    recent_highs = df['High'].rolling(window=SWING_LENGTH_D).max()
+    recent_lows = df['Low'].rolling(window=SWING_LENGTH_D).min()
+    
+    # Estructura: El cierre actual es mayor al promedio de los últimos máximos
+    is_bullish = df['Close'].iloc[-1] > recent_highs.mean()
+    return is_bullish
+
+def detect_fvg(df):
+    """Detecta desequilibrios (Fair Value Gaps)"""
+    # Velas 1, 2, 3
+    c1_high = df['High'].iloc[-3]
+    c3_low = df['Low'].iloc[-1]
+    
+    # Bullish FVG: El Low de la vela 3 es mayor al High de la vela 1
+    if c3_low > c1_high:
+        return True
+    return False
+
+def calculate_relative_strength(ticker, sector_etf):
+    """Compara el rendimiento del activo vs su sector"""
+    try:
+        stock_data = yf.download(ticker, period='10d', progress=False)['Close']
+        etf_data = yf.download(sector_etf, period='10d', progress=False)['Close']
+        
+        stock_perf = stock_data.iloc[-1] / stock_data.iloc[-RS_DIAS]
+        etf_perf = etf_data.iloc[-1] / etf_data.iloc[-RS_DIAS]
+        
+        return stock_perf / etf_perf
+    except:
+        return 1.0
+
+def get_smc_score(df):
+    score = 0
+    # 1. Filtro de Liquidez (Indispensable)
+    turnover = (df['Volume'] * df['Close']).tail(10).mean()
+    if turnover < 250000: # Filtro de $250k USD diarios
+        return 0 
+
+    # 2. Detección de FVG (Imán de Algoritmos)
+    # Comparamos High de Vela 1 con Low de Vela 3
+    if df['Low'].iloc[-1] > df['High'].iloc[-3]:
+        score += 25  # Bullish FVG detectado
+        
+    # 3. Zona de Discount (Comprar barato)
+    range_max = df['High'].tail(20).max()
+    range_min = df['Low'].tail(20).min()
+    equilibrium = (range_max + range_min) / 2
+    if df['Close'].iloc[-1] < equilibrium:
+        score += 35
+        
+    # 4. RSI de Agotamiento (Venta masiva terminada)
+    # Si el RSI < 40, sumamos puntos por sobreventa institucional
+    if df['RSI'].iloc[-1] < 40:
+        score += 20
+
+    return score
 
 def detect_fvg(df):
     # Un FVG alcista ocurre si el Low de la vela 3 es mayor al High de la vela 1
