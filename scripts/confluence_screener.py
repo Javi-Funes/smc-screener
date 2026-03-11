@@ -189,11 +189,55 @@ def analyze_ticker(ticker):
         return None
 
 # ============================================================
+# MODULO: RADAR DE ROTACION SECTORIAL (Hedge Fund Tracker)
+# ============================================================
+def scan_sector_rotation():
+    print("\n" + "="*50)
+    print(" 📡 RADAR DE ROTACIÓN INSTITUCIONAL (Últimos 5 días)")
+    print("="*50)
+    try:
+        # Benchmark general del mercado
+        spy = yf.download('SPY', period='10d', progress=False, auto_adjust=True)['Close']
+        if spy.empty: return
+        spy_ret = (spy.iloc[-1] / spy.iloc[-RS_DIAS]) - 1
+        
+        rotation_data = []
+        for sector, ticker in SECTOR_ETF.items():
+            try:
+                etf = yf.download(ticker, period='10d', progress=False, auto_adjust=True)['Close']
+                if etf.empty: continue
+                etf_ret = (etf.iloc[-1] / etf.iloc[-RS_DIAS]) - 1
+                
+                # Relative Strength vs SPY
+                rs_spy = (1 + etf_ret) / (1 + spy_ret) if (1 + spy_ret) != 0 else 0
+                
+                estado = "🟢 ENTRANDO" if rs_spy > 1.0 else "🔴 SALIENDO"
+                rotation_data.append({
+                    'Sector': sector,
+                    'ETF': ticker,
+                    'RS_Score': round(rs_spy, 3),
+                    'Estado': estado
+                })
+            except: continue
+        
+        if rotation_data:
+            df_rot = pd.DataFrame(rotation_data).sort_values(by='RS_Score', ascending=False)
+            print(df_rot.to_string(index=False))
+        print("="*50 + "\n")
+    except Exception as e:
+        print(f"Error cargando rotación: {e}")
+
+# ============================================================
 # EJECUCIÓN
 # ============================================================
 
 if __name__ == '__main__':
     print(f"--- SMC Búnker Screener | {datetime.now().strftime('%Y-%m-%d %H:%M')} ---")
+    
+    # 1. Ejecutamos el radar de rotación primero
+    scan_sector_rotation()
+    
+    # 2. Inicia el escaneo de Perlas
     results = []
     for i, t in enumerate(ALL_TICKERS):
         print(f"[{i+1}/{len(ALL_TICKERS)}] Analizando {t}...    ", end='\r')
