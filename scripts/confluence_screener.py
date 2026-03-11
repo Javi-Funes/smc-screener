@@ -127,6 +127,15 @@ ALL_TICKERS = sorted(list(set(SP500 + NASDAQ100)))
 # FUNCIONES BASE SMC
 # ============================================================
 
+def check_liquidity(ticker_data):
+    # Calculamos el volumen promedio de los últimos 10 días en USD
+    avg_volume = ticker_data['Volume'].tail(10).mean()
+    avg_price = ticker_data['Close'].tail(10).mean()
+    daily_turnover = avg_volume * avg_price
+    
+    # Solo nos interesan activos que muevan más de $250,000
+    return daily_turnover > 250000
+    
 def to_arr(series):
     """Convierte cualquier serie/dataframe a numpy array plano"""
     return np.array(series).flatten()
