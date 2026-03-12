@@ -20,21 +20,13 @@ jobs:
       - name: Instalar dependencias
         run: pip install requests yfinance pandas numpy
 
-      - name: Restaurar offset
-        uses: actions/cache@v4
+      - name: Descargar offset anterior
+        uses: dawidd6/action-download-artifact@v6
         with:
-          path: results/telegram_offset.txt
-          key: telegram-offset-${{ github.run_id }}
-          restore-keys: |
-            telegram-offset-
-
-      - name: Restaurar ultimo reporte
-        uses: actions/cache@v4
-        with:
-          path: results/reporte_latest.txt
-          key: reporte-latest-${{ github.run_id }}
-          restore-keys: |
-            reporte-latest-
+          name: telegram-offset
+          path: results/
+          if_no_artifact_found: ignore
+          workflow_conclusion: success
 
       - name: Correr bot
         env:
@@ -43,8 +35,10 @@ jobs:
         run: python scripts/telegram_bot.py
 
       - name: Guardar offset actualizado
-        uses: actions/cache/save@v4
+        uses: actions/upload-artifact@v4
         if: always()
         with:
+          name: telegram-offset
           path: results/telegram_offset.txt
-          key: telegram-offset-${{ github.run_id }}
+          retention-days: 7
+          overwrite: true
