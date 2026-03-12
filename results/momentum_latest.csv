@@ -1,0 +1,24 @@
+Ticker,Sector,ETF_Ref,Score,Senales,Precio,Target_1pct,Stop,RR,Absorcion_Vol,RS_vs_ETF,RS_ETF_vs_SPY,Ret_5d_pct,Squeeze_Ratio,Gap_pct,PC_Ratio,TradingView
+LYB,Basic Materials,XLB,3,rs + gap + opciones,70.12,70.82,69.77,2.0,,1.042,1.005,4.49,,2.69,0.396,https://www.tradingview.com/chart/?symbol=LYB
+OXY,Energy,XLE,3,rs + gap + opciones,57.46,58.03,57.17,2.0,,1.054,1.014,6.54,,2.2,0.221,https://www.tradingview.com/chart/?symbol=OXY
+MOS,Basic Materials,XLB,3,rs + gap + opciones,30.62,30.93,30.47,2.0,,1.171,1.005,17.38,,6.52,0.015,https://www.tradingview.com/chart/?symbol=MOS
+CF,Basic Materials,XLB,2,rs + gap,129.19,130.48,128.54,2.0,,1.113,1.005,11.58,,6.57,,https://www.tradingview.com/chart/?symbol=CF
+AMAT,Technology,XLK,2,rs + opciones,340.01,343.41,338.31,2.0,,1.036,1.014,4.7,,,0.39,https://www.tradingview.com/chart/?symbol=AMAT
+APD,Basic Materials,XLB,2,rs + gap,285.57,288.43,284.14,2.0,,1.047,1.005,4.92,,1.47,,https://www.tradingview.com/chart/?symbol=APD
+CE,Basic Materials,XLB,2,rs + gap,55.66,56.22,55.38,2.0,,1.126,1.005,12.85,,2.52,,https://www.tradingview.com/chart/?symbol=CE
+EMR,Industrials,XLI,2,squeeze + opciones,136.26,137.62,135.58,2.0,,,,,0.557,,0.016,https://www.tradingview.com/chart/?symbol=EMR
+DOW,Basic Materials,XLB,2,rs + gap,36.69,37.06,36.51,2.0,,1.1,1.005,10.25,,4.02,,https://www.tradingview.com/chart/?symbol=DOW
+CME,Financial Services,XLF,2,gap + opciones,308.8,311.89,307.26,2.0,,,,,,1.62,0.024,https://www.tradingview.com/chart/?symbol=CME
+EW,Healthcare,XLV,2,rs + opciones,85.25,86.1,84.82,2.0,,1.047,1.001,4.42,,,0.436,https://www.tradingview.com/chart/?symbol=EW
+HCA,Healthcare,XLV,2,rs + opciones,547.95,553.43,545.21,2.0,,1.031,1.001,2.84,,,0.383,https://www.tradingview.com/chart/?symbol=HCA
+FANG,Energy,XLE,2,absorcion + opciones,178.99,180.78,178.1,2.0,3.08,,,,,,0.099,https://www.tradingview.com/chart/?symbol=FANG
+FSLR,Technology,XLK,2,rs + squeeze,199.03,201.02,198.03,2.0,,1.041,1.014,5.19,0.577,,,https://www.tradingview.com/chart/?symbol=FSLR
+HAS,Consumer Cyclical,XLY,2,gap + opciones,97.08,98.05,96.59,2.0,,,,,,3.55,0.196,https://www.tradingview.com/chart/?symbol=HAS
+LKQ,Consumer Cyclical,XLY,2,squeeze + opciones,30.5,30.8,30.34,2.0,,,,,0.563,,0.333,https://www.tradingview.com/chart/?symbol=LKQ
+LHX,Industrials,XLI,2,squeeze + opciones,362.36,365.99,360.55,2.0,,,,,0.542,,0.456,https://www.tradingview.com/chart/?symbol=LHX
+HII,Industrials,XLI,2,squeeze + opciones,409.0,413.09,406.95,2.0,,,,,0.593,,0.149,https://www.tradingview.com/chart/?symbol=HII
+MAR,Consumer Cyclical,XLY,2,squeeze + opciones,320.3,323.5,318.7,2.0,,,,,0.547,,0.421,https://www.tradingview.com/chart/?symbol=MAR
+MOH,Healthcare,XLV,2,rs + opciones,150.43,151.94,149.68,2.0,,1.044,1.001,4.13,,,0.348,https://www.tradingview.com/chart/?symbol=MOH
+MLM,Basic Materials,XLB,2,squeeze + opciones,591.21,597.12,588.25,2.0,,,,,0.551,,0.5,https://www.tradingview.com/chart/?symbol=MLM
+PYPL,Financial Services,XLF,2,squeeze + opciones,45.48,45.93,45.25,2.0,,,,,0.513,,0.236,https://www.tradingview.com/chart/?symbol=PYPL
+TRGP,Energy,XLE,2,squeeze + opciones,236.59,238.96,235.41,2.0,,,,,0.56,,0.251,https://www.tradingview.com/chart/?symbol=TRGP
