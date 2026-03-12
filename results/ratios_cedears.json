@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "actualizado": "2026-03-11 21:17",
-    "total": 361,
+    "actualizado": "2026-03-12 01:29",
+    "total": 369,
     "comafi": 306,
     "cajavaloroes": 55
   },
@@ -1077,11 +1077,11 @@
     "fuente": "Comafi"
   },
   "MELI": {
-    "ratio": 120.0,
-    "nombre": "MERCADOLIBRE INC.",
-    "byma": "MELI",
-    "tipo": "Accion",
-    "fuente": "Comafi"
+    "ratio": 1,
+    "nombre": "MercadoLibre",
+    "byma": "MELI.BA",
+    "tipo": "ADR-Argentina",
+    "fuente": "fallback-prospecto"
   },
   "MRK": {
     "ratio": 5.0,
@@ -1714,11 +1714,11 @@
     "fuente": "Comafi"
   },
   "DESP": {
-    "ratio": 1.0,
-    "nombre": "DESPEGAR.COM, CORP.",
-    "byma": "DESP",
-    "tipo": "Accion",
-    "fuente": "Comafi"
+    "ratio": 1,
+    "nombre": "Despegar",
+    "byma": "DESP.BA",
+    "tipo": "ADR-Argentina",
+    "fuente": "fallback-prospecto"
   },
   "AGRO": {
     "ratio": 1.0,
@@ -1728,11 +1728,11 @@
     "fuente": "Comafi"
   },
   "GLOB": {
-    "ratio": 18.0,
-    "nombre": "GLOBANT S.A.",
-    "byma": "GLOB",
-    "tipo": "Accion",
-    "fuente": "Comafi"
+    "ratio": 1,
+    "nombre": "Globant",
+    "byma": "GLOB.BA",
+    "tipo": "ADR-Argentina",
+    "fuente": "fallback-prospecto"
   },
   "BABA": {
     "ratio": 9.0,
@@ -2531,5 +2531,61 @@
     "byma": "DJNJ3-XD004",
     "tipo": "Accion",
     "fuente": "Comafi"
+  },
+  "GGAL": {
+    "ratio": 10,
+    "nombre": "Grupo Galicia",
+    "byma": "GGAL.BA",
+    "tipo": "ADR-Argentina",
+    "fuente": "fallback-prospecto"
+  },
+  "YPF": {
+    "ratio": 1,
+    "nombre": "YPF",
+    "byma": "YPFD.BA",
+    "tipo": "ADR-Argentina",
+    "fuente": "fallback-prospecto"
+  },
+  "PAM": {
+    "ratio": 25,
+    "nombre": "Pampa Energia",
+    "byma": "PAMP.BA",
+    "tipo": "ADR-Argentina",
+    "fuente": "fallback-prospecto"
+  },
+  "BMA": {
+    "ratio": 10,
+    "nombre": "Banco Macro",
+    "byma": "BMA.BA",
+    "tipo": "ADR-Argentina",
+    "fuente": "fallback-prospecto"
+  },
+  "CEPU": {
+    "ratio": 10,
+    "nombre": "Central Puerto",
+    "byma": "CEPU.BA",
+    "tipo": "ADR-Argentina",
+    "fuente": "fallback-prospecto"
+  },
+  "LOMA": {
+    "ratio": 5,
+    "nombre": "Loma Negra",
+    "byma": "LOMA.BA",
+    "tipo": "ADR-Argentina",
+    "fuente": "fallback-prospecto"
+  },
+  "SUPV": {
+    "ratio": 5,
+    "nombre": "Supervielle",
+    "byma": "SUPV.BA",
+    "tipo": "ADR-Argentina",
+    "fuente": "fallback-prospecto"
+  },
+  "TGS": {
+    "ratio": 5,
+    "nombre": "TGS",
+    "byma": "TGSU2.BA",
+    "tipo": "ADR-Argentina",
+    "fuente": "fallback-prospecto"
   }
 }

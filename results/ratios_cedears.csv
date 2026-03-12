@@ -1,4 +1,15 @@
 ticker,byma,ratio,nombre,tipo,fuente
+BMA,BMA.BA,10.0,Banco Macro,ADR-Argentina,fallback-prospecto
+CEPU,CEPU.BA,10.0,Central Puerto,ADR-Argentina,fallback-prospecto
+DESP,DESP.BA,1.0,Despegar,ADR-Argentina,fallback-prospecto
+GGAL,GGAL.BA,10.0,Grupo Galicia,ADR-Argentina,fallback-prospecto
+GLOB,GLOB.BA,1.0,Globant,ADR-Argentina,fallback-prospecto
+LOMA,LOMA.BA,5.0,Loma Negra,ADR-Argentina,fallback-prospecto
+MELI,MELI.BA,1.0,MercadoLibre,ADR-Argentina,fallback-prospecto
+PAM,PAMP.BA,25.0,Pampa Energia,ADR-Argentina,fallback-prospecto
+SUPV,SUPV.BA,5.0,Supervielle,ADR-Argentina,fallback-prospecto
+TGS,TGSU2.BA,5.0,TGS,ADR-Argentina,fallback-prospecto
+YPF,YPFD.BA,1.0,YPF,ADR-Argentina,fallback-prospecto
 AABA,AABA,3.0,ALTABA INC***,Accion,Comafi
 AAL,AAL,2.0,AMERICAN AIRLINES GROUP INC,Accion,Comafi
 AAP,AAP,14.0,ADVANCE AUTO PARTS INC,Accion,Comafi
@@ -76,7 +87,6 @@ DAL,DAL,8.0,DELTA AIR LINES INC.,Accion,Comafi
 DD,DD,5.0,DUPONT DE NOMOURS INC,Accion,Comafi
 DE,DE,40.0,DEERE & COMPANY,Accion,Comafi
 DEO,DEO,6.0,DIAGEO PLC ADR,Accion,Comafi
-DESP,DESP,1.0,"DESPEGAR.COM, CORP.",Accion,Comafi
 DHR,DHR,54.0,DANAHER CORP.,Accion,Comafi
 DIS,DIS,12.0,DISNEY COMMON STOCK,Accion,Comafi
 DJNJ3-XD004,DJNJ3-XD004,1.0,JNJ6.95,Accion,Comafi
@@ -106,7 +116,6 @@ GE,GE,8.0,GE AEROSPACE.,Accion,Comafi
 GFI,GFI,1.0,GOLD FIELDS LTD.,Accion,Comafi
 GGB,GGB,0.25,GERDAU S.A.,Accion,Comafi
 GILD,GILD,4.0,"GILEAD SCIENCES, INC.",Accion,Comafi
-GLOB,GLOB,18.0,GLOBANT S.A.,Accion,Comafi
 GLW,GLW,4.0,CORNING INCORPORATED,Accion,Comafi
 GM,GM,6.0,GENERAL MOTORS CO,Accion,Comafi
 GOLD,GOLD,2.0,BARRICK GOLD CORP.,Accion,Comafi
@@ -170,7 +179,6 @@ MBT,MBT,2.0,MOBILE TELESYSTEMS***,Accion,Comafi
 MCD,MCD,24.0,Mc DONALD'S Corp.,Accion,Comafi
 MDLZ,MDLZ,15.0,"MONDELEZ INTERNATIONAL, INC.",Accion,Comafi
 MDT,MDT,4.0,MEDTRONIC PLC,Accion,Comafi
-MELI,MELI,120.0,MERCADOLIBRE INC.,Accion,Comafi
 META,META,24.0,META PLATFORMS INC.,Accion,Comafi
 MFG,MFG,1.0,MIZUHO FINANCIAL GROUP,Accion,Comafi
 MMC,MMC,16.0,"MARSH & MCLENNAN COMPANIES, INC.",Accion,Comafi
