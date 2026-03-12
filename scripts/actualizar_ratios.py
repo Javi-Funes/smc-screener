@@ -207,6 +207,106 @@ def parse_cajavaloroes(content):
         print(f"  CajaValores ERROR: {e}")
     return ratios
 
+# ============================================================
+# CALCULAR RATIOS ADR ARGENTINOS EN TIEMPO REAL
+# Estos ADRs NO son CEDEARs — cotizan directamente en NYSE.
+# El ratio se calcula empiricamente:
+#   ratio = precio_BYMA_pesos / (precio_NYSE_usd * CCL)
+# Si el calculo falla, usa el ratio conocido como fallback.
+# ============================================================
+
+# Ratios conocidos como fallback (fuente: prospectos CNV)
+ADRS_ARG = {
+    'GGAL': {'byma': 'GGAL.BA',  'nombre': 'Grupo Galicia',    'ratio_fallback': 10},
+    'YPF':  {'byma': 'YPFD.BA',  'nombre': 'YPF',              'ratio_fallback': 1},
+    'PAM':  {'byma': 'PAMP.BA',  'nombre': 'Pampa Energia',    'ratio_fallback': 25},
+    'BMA':  {'byma': 'BMA.BA',   'nombre': 'Banco Macro',      'ratio_fallback': 10},
+    'CEPU': {'byma': 'CEPU.BA',  'nombre': 'Central Puerto',   'ratio_fallback': 10},
+    'LOMA': {'byma': 'LOMA.BA',  'nombre': 'Loma Negra',       'ratio_fallback': 5},
+    'SUPV': {'byma': 'SUPV.BA',  'nombre': 'Supervielle',      'ratio_fallback': 5},
+    'TGS':  {'byma': 'TGSU2.BA', 'nombre': 'TGS',              'ratio_fallback': 5},
+    'MELI': {'byma': 'MELI.BA',  'nombre': 'MercadoLibre',     'ratio_fallback': 1},
+    'GLOB': {'byma': 'GLOB.BA',  'nombre': 'Globant',          'ratio_fallback': 1},
+    'DESP': {'byma': 'DESP.BA',  'nombre': 'Despegar',         'ratio_fallback': 1},
+}
+
+def calcular_ratios_adr(ccl: float) -> dict:
+    """
+    Descarga precios NYSE y BYMA para cada ADR argentino
+    y calcula el ratio real de mercado.
+    Usa fallback si alguna descarga falla.
+    """
+    try:
+        import yfinance as yf
+    except ImportError:
+        print("  yfinance no disponible — usando ratios fallback")
+        return _ratios_adr_fallback()
+
+    ratios = {}
+    print(f"  Calculando ratios ADR con CCL=${ccl:,.2f}...")
+
+    for nyse, info in ADRS_ARG.items():
+        byma     = info['byma']
+        fallback = info['ratio_fallback']
+        try:
+            p_nyse_s = yf.download(nyse, period='3d', progress=False, auto_adjust=True)['Close']
+            p_byma_s = yf.download(byma, period='3d', progress=False, auto_adjust=True)['Close']
+
+            if p_nyse_s.empty or p_byma_s.empty:
+                raise ValueError("Sin datos")
+
+            p_nyse = float(p_nyse_s.iloc[-1])
+            p_byma = float(p_byma_s.iloc[-1])
+
+            # ratio = acciones_locales / 1_ADR
+            # Si p_byma / (p_nyse * ccl) < 1 → invertimos
+            ratio_raw = p_byma / (p_nyse * ccl)
+            if ratio_raw >= 1:
+                ratio_calc = round(ratio_raw)
+            else:
+                ratio_calc = round(1 / ratio_raw)
+
+            # Sanidad: no deberia diferir mas de 50% del fallback
+            if abs(ratio_calc - fallback) / fallback > 0.5:
+                print(f"  {nyse}: ratio calculado {ratio_calc} muy distinto del fallback {fallback} → usando fallback")
+                ratio_final = fallback
+                fuente_ratio = 'fallback'
+            else:
+                ratio_final = ratio_calc
+                fuente_ratio = f'mercado (NYSE=${p_nyse:.2f} BYMA=${p_byma:.2f})'
+
+            print(f"  {nyse:<6}  NYSE=${p_nyse:>8.2f}  BYMA=${p_byma:>10.2f}  ratio={ratio_final}  [{fuente_ratio}]")
+
+        except Exception as e:
+            ratio_final  = fallback
+            fuente_ratio = 'fallback'
+            print(f"  {nyse:<6}  ERROR: {e} → ratio fallback={fallback}")
+
+        ratios[nyse] = {
+            'ratio':  ratio_final,
+            'nombre': info['nombre'],
+            'byma':   byma,
+            'tipo':   'ADR-Argentina',
+            'fuente': f'Calculado ({fuente_ratio})',
+        }
+
+    return ratios
+
+
+def _ratios_adr_fallback() -> dict:
+    """Retorna todos los ADRs con sus ratios fallback."""
+    return {
+        nyse: {
+            'ratio':  info['ratio_fallback'],
+            'nombre': info['nombre'],
+            'byma':   info['byma'],
+            'tipo':   'ADR-Argentina',
+            'fuente': 'fallback-prospecto',
+        }
+        for nyse, info in ADRS_ARG.items()
+    }
+
+
 if __name__ == '__main__':
     inicio = datetime.now()
     print(f'\n{"="*60}')
@@ -242,12 +342,27 @@ if __name__ == '__main__':
     ratios_comafi = parse_comafi(content_comafi)       if content_comafi else {}
     ratios_cajval = parse_cajavaloroes(content_cajval) if content_cajval else {}
 
-    # 4. Merge — CajaValores base, Comafi sobreescribe acciones
+    # 4. Calcular ratios ADR argentinos en tiempo real
+    print('\n[ 5/5 ] Calculando ratios ADR argentinos...')
+    # Obtener CCL para el calculo
+    ccl_para_adr = 1455.0
+    try:
+        r = requests.get('https://dolarapi.com/v1/dolares/contadoconliqui', timeout=5)
+        if r.status_code == 200:
+            ccl_para_adr = float(r.json().get('venta', 1455.0))
+    except:
+        pass
+    ratios_adr = calcular_ratios_adr(ccl_para_adr)
+
+    # 5. Merge final — ADRs tienen su propio tipo, no pisan CEDEARs
+    # CajaValores base → Comafi sobreescribe acciones → ADRs se agregan aparte
     ratios_final = {}
     for t, d in ratios_cajval.items():
         ratios_final[t] = d
     for t, d in ratios_comafi.items():
-        ratios_final[t] = d  # Comafi gana en acciones
+        ratios_final[t] = d
+    for t, d in ratios_adr.items():
+        ratios_final[t] = d  # ADRs no entran en conflicto (tipo distinto)
 
     # 5. Stats
     tipos = {}
@@ -258,9 +373,10 @@ if __name__ == '__main__':
     print(f'\n  RESULTADO FINAL:')
     print(f'  Total tickers:    {len(ratios_final)}')
     for tipo, count in sorted(tipos.items()):
-        print(f'  {tipo:<14}  {count}')
+        print(f'  {tipo:<16}  {count}')
     print(f'  De Comafi:        {len(ratios_comafi)}')
     print(f'  De CajaValores:   {len(ratios_cajval)}')
+    print(f'  ADRs argentinos:  {len(ratios_adr)}')
 
     # 6. Guardar JSON
     output = {'_meta': {'actualizado': inicio.strftime('%Y-%m-%d %H:%M'),
@@ -279,11 +395,25 @@ if __name__ == '__main__':
 
     # 8. Verificacion tickers clave
     print(f'\n  VERIFICACION TICKERS CLAVE:')
-    for t in ['BABA','META','AAPL','MSFT','NVDA','AMZN','GOOGL','TSLA',
-              'SPY','QQQ','VALE3','GGAL','YPF']:
+    print(f'  --- CEDEARs ---')
+    for t in ['BABA','META','AAPL','MSFT','NVDA','AMZN','GOOGL','TSLA']:
         d = ratios_final.get(t)
         if d:
-            print(f'  {t:<8}  ratio: {d["ratio"]:>6.1f}  tipo: {d["tipo"]:<8}  ({d["fuente"]})')
+            print(f'  {t:<8}  ratio: {d["ratio"]:>6.1f}  tipo: {d["tipo"]:<14}  ({d["fuente"]})')
+        else:
+            print(f'  {t:<8}  NO ENCONTRADO')
+    print(f'  --- ADRs Argentinos ---')
+    for t in ['GGAL','YPF','PAM','BMA','MELI','GLOB']:
+        d = ratios_final.get(t)
+        if d:
+            print(f'  {t:<8}  ratio: {d["ratio"]:>6.1f}  tipo: {d["tipo"]:<14}  byma: {d["byma"]}')
+        else:
+            print(f'  {t:<8}  NO ENCONTRADO')
+    print(f'  --- ETFs ---')
+    for t in ['SPY','QQQ','GLD']:
+        d = ratios_final.get(t)
+        if d:
+            print(f'  {t:<8}  ratio: {d["ratio"]:>6.1f}  tipo: {d["tipo"]:<14}  ({d["fuente"]})')
         else:
             print(f'  {t:<8}  NO ENCONTRADO')
 
