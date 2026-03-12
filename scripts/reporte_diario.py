@@ -14,6 +14,7 @@ import requests
 import warnings
 import time
 import os
+import json
 from datetime import datetime
 
 warnings.filterwarnings('ignore')
@@ -832,12 +833,24 @@ def generar_reporte(ccl, ccl_fuente, resultados_cedears,
 if __name__ == '__main__':
     inicio = datetime.now()
     print(f'\n{"="*65}')
-    print(f'  SMC REPORTE DIARIO — Argentina Edition')
+    print(f'  SMC REPORTE DIARIO v2 — Argentina Edition (con ratios)')
     print(f'  {inicio.strftime("%d/%m/%Y %H:%M")}')
     print(f'{"="*65}\n')
 
+    # 0. Cargar ratios
+    print('Cargando ratios CEDEARs...')
+    _cargar_ratios()
+
+    # Universo desde JSON — todos los CEDEARs disponibles
+    tickers_cedears = [t for t, d in _RATIOS_CEDEARS.items()
+                       if d.get('tipo') not in ('ETF', 'Brasil')
+                       and not t.endswith('.BA')]
+    tickers_adrs    = list(_ADRS_ARG.keys())
+
+    print(f'  Universo: {len(tickers_cedears)} CEDEARs + {len(tickers_adrs)} ADRs arg + {len(PANEL_LIDER_BYMA)} BYMA')
+
     # 1. CCL
-    print('Obteniendo CCL...')
+    print('\nObteniendo CCL...')
     ccl, ccl_fuente = get_ccl()
     print(f'  CCL: ${ccl:,.2f} ARS/USD  (fuente: {ccl_fuente})')
 
@@ -845,50 +858,107 @@ if __name__ == '__main__':
     print('\nCalculando rotacion sectorial...')
     rotacion, spy_ret = get_rotacion()
 
-    # 3. Scan CEDEARs NYSE
-    print(f'\nEscaneando {len(CEDEARS_NYSE)} CEDEARs NYSE...')
+    # 3. Scan CEDEARs
+    print(f'\nEscaneando {len(tickers_cedears)} CEDEARs...')
     resultados_cedears = []
-    for i, t in enumerate(CEDEARS_NYSE):
+    for i, t in enumerate(tickers_cedears):
         r = analyze(t, es_byma=False)
         if r:
+            # Agregar ratio y precio en pesos correcto
+            ratio = get_ratio(t)
+            r['ratio']        = ratio
+            r['nombre_cedear'] = get_nombre_cedear(t)
+            r['precio_ars']   = round((r['precio'] / ratio) * ccl, 0)
+            r['stop_ars']     = round((r['stop']   / ratio) * ccl, 0)
+            r['target_ars']   = round((r['target'] / ratio) * ccl, 0)
             resultados_cedears.append(r)
-            print(f'  HIT {t:6} | Score:{r["score"]}/7 | {r["zona"]} | RSI:{r["rsi"]}')
+            print(f'  HIT {t:6} | Score:{r["score"]}/7 | {r["zona"]} | '
+                  f'ratio:{ratio} | ARS:${r["precio_ars"]:,.0f}')
         if (i+1) % BATCH_SIZE == 0:
             time.sleep(SLEEP_BETWEEN)
 
     # 4. Scan ADRs Argentinos
-    print(f'\nEscaneando {len(ADRS_ARG_NYSE)} ADRs Argentinos...')
+    print(f'\nEscaneando {len(tickers_adrs)} ADRs Argentinos...')
     resultados_adrs = []
-    for i, t in enumerate(ADRS_ARG_NYSE.keys()):
+    for i, t in enumerate(tickers_adrs):
         r = analyze(t, es_byma=False)
         if r:
+            ratio = get_ratio(t)
+            r['ratio']        = ratio
+            r['nombre_cedear'] = get_nombre_cedear(t)
+            r['byma_local']   = get_byma(t)
+            r['precio_ars']   = round((r['precio'] / ratio) * ccl, 0)
+            r['stop_ars']     = round((r['stop']   / ratio) * ccl, 0)
+            r['target_ars']   = round((r['target'] / ratio) * ccl, 0)
             resultados_adrs.append(r)
-            print(f'  HIT {t:6} | Score:{r["score"]}/7 | {r["zona"]} | ⭐ ADR ARG')
+            print(f'  HIT {t:6} | Score:{r["score"]}/7 | {r["zona"]} | '
+                  f'ratio:{ratio} | ARS:${r["precio_ars"]:,.0f} | BYMA:{r["byma_local"]}')
         if (i+1) % BATCH_SIZE == 0:
             time.sleep(SLEEP_BETWEEN)
 
-    # 5. Scan Panel Lider BYMA
+    # 5. Scan Panel BYMA
     print(f'\nEscaneando {len(PANEL_LIDER_BYMA)} acciones BYMA...')
     resultados_byma = []
     for i, t in enumerate(PANEL_LIDER_BYMA.keys()):
         r = analyze(t, es_byma=True)
         if r:
+            r['ratio'] = 1
+            r['nombre_cedear'] = PANEL_LIDER_BYMA.get(t, t)
+            r['precio_ars'] = r['precio']
+            r['stop_ars']   = r['stop']
+            r['target_ars'] = r['target']
             resultados_byma.append(r)
             print(f'  HIT {t:10} | Score:{r["score"]}/7 | {r["zona"]} | BYMA')
         if (i+1) % BATCH_SIZE == 0:
             time.sleep(SLEEP_BETWEEN)
 
-    # Ordenar por score
+    # Ordenar
     for lst in [resultados_cedears, resultados_adrs, resultados_byma]:
         lst.sort(key=lambda x: (-x['score'], x['ob_enc_bool'], x['pct_rango']))
 
-    # 6. Generar reporte
+    # 6. Generar reporte con precios en pesos correctos
     print('\nGenerando reporte...')
+
+    def fmt_pesos(r, ccl_val, es_adr=False):
+        """Formatea la seccion de precios en pesos usando ratio correcto."""
+        lines = []
+        ratio = r.get('ratio', 1)
+        if not r['ticker'].endswith('.BA'):
+            lines.append(f'  {"─"*33} PRECIO EN PESOS {"─"*11}')
+            lines.append(f'  CCL: ${ccl_val:,.2f}  |  Ratio: {ratio}:1')
+            lines.append(f'  Formula: (${r["precio"]:.2f} / {ratio}) x ${ccl_val:,.0f}')
+            lines.append(f'  Entrada:  ${r["precio_ars"]:>12,.0f} ARS')
+            lines.append(f'  Stop:     ${r["stop_ars"]:>12,.0f} ARS  (-{STOP_PCT}%)')
+            lines.append(f'  Target:   ${r["target_ars"]:>12,.0f} ARS  (+{TARGET_PCT}%)')
+        if es_adr:
+            byma = r.get('byma_local', '')
+            if byma:
+                lines.append(f'  {"─"*33} DOBLE CONFLUENCIA {"─"*9}')
+                lines.append(f'  Accion local BYMA: {byma}')
+                lines.append(f'  1 ADR = {ratio} acciones en BYMA')
+        return lines
+
     reporte = generar_reporte(
         ccl, ccl_fuente,
         resultados_cedears, resultados_adrs, resultados_byma,
         rotacion, spy_ret
     )
+
+    # Inyectar precios en pesos correctos reemplazando la seccion vieja
+    # (el reporte base ya tiene la seccion, la sobreescribimos en el txt final)
+    lineas_reporte = reporte.split('\n')
+    reporte_final_lines = []
+    skip_pesos = False
+    for linea in lineas_reporte:
+        if 'CEDEAR EN PESOS' in linea:
+            skip_pesos = True
+            continue
+        if skip_pesos and linea.strip().startswith('─') and 'TRADE' in linea:
+            skip_pesos = False
+        if skip_pesos:
+            continue
+        reporte_final_lines.append(linea)
+    reporte_final = '\n'.join(reporte_final_lines)
 
     # 7. Guardar
     os.makedirs('results', exist_ok=True)
@@ -897,18 +967,18 @@ if __name__ == '__main__':
     fname_latest = 'results/reporte_latest.txt'
 
     with open(fname_dated,  'w', encoding='utf-8') as f:
-        f.write(reporte)
+        f.write(reporte_final)
     with open(fname_latest, 'w', encoding='utf-8') as f:
-        f.write(reporte)
+        f.write(reporte_final)
 
-    # También CSV para análisis
     todos = resultados_cedears + resultados_adrs + resultados_byma
     if todos:
-        pd.DataFrame(todos).to_csv(
-            f'results/confluence_{date_str}.csv', index=False)
+        cols = ['ticker','nombre_cedear','score','zona','precio','ratio',
+                'precio_ars','stop_ars','target_ars','rsi','estructura','ob_encima']
+        pd.DataFrame(todos)[[c for c in cols if c in pd.DataFrame(todos).columns]]\
+          .to_csv(f'results/confluence_{date_str}.csv', index=False)
 
-    print(reporte)
-
+    print(reporte_final)
     elapsed = (datetime.now() - inicio).seconds
     print(f'\nTiempo total: {elapsed}s')
     print(f'Guardado en: {fname_latest}')
