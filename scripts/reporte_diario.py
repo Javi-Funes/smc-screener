@@ -501,7 +501,7 @@ def generar_reporte_texto(ccl, ccl_fuente, resultados_cedears, resultados_adrs,
 # ============================================================
 # HTML — mismo texto con colores
 # ============================================================
-def texto_a_html(texto, fecha_str, html_url_latest=''):
+def texto_a_html(texto, fecha_str, html_url_latest='', reportes_anteriores=None):
     def colorizar(texto):
         lines=texto.split('\n'); out=[]
         for line in lines:
@@ -541,6 +541,22 @@ def texto_a_html(texto, fecha_str, html_url_latest=''):
     nav=''
     if html_url_latest:
         nav=f'<div class="nav-bar">&#128279; <a href="{html_url_latest}">Ver reporte mas reciente</a></div>'
+
+    # Footer con ultimos 5 reportes
+    footer_links=''
+    if reportes_anteriores:
+        items=''.join(
+            f'<a href="{url}" class="hist-link">'
+            f'<span class="hist-ico">📄</span>'
+            f'<span class="hist-fecha">{label}</span>'
+            f'</a>'
+            for label,url in reportes_anteriores
+        )
+        footer_links=f'''
+<div class="hist-bar">
+  <span class="hist-title">📋 Reportes anteriores</span>
+  <div class="hist-list">{items}</div>
+</div>'''
 
     return f'''<!DOCTYPE html>
 <html lang="es">
@@ -583,12 +599,20 @@ def texto_a_html(texto, fecha_str, html_url_latest=''):
   .hdr-byma{{color:#4fa3ff}}
   .tv-link{{color:#4fa3ff;text-decoration:none;background:rgba(79,163,255,.1);padding:1px 9px;border-radius:3px;border:1px solid rgba(79,163,255,.25)}}
   .tv-link:hover{{background:rgba(79,163,255,.22)}}
-  @media(max-width:600px){{.wrap{{padding:12px 10px}}body{{font-size:12px}}}}
+  .hist-bar{{background:#151820;border-top:1px solid #1e2a3a;padding:16px 28px;margin-top:8px}}
+  .hist-title{{font-size:11px;color:#4a5568;text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:10px}}
+  .hist-list{{display:flex;gap:10px;flex-wrap:wrap}}
+  .hist-link{{display:flex;align-items:center;gap:6px;background:#1c2030;border:1px solid #252a38;border-radius:5px;padding:7px 14px;text-decoration:none;color:#8892a4;font-size:12px;transition:border-color .2s,color .2s}}
+  .hist-link:hover{{border-color:#4fa3ff;color:#4fa3ff}}
+  .hist-ico{{font-size:13px}}
+  .hist-fecha{{font-family:'JetBrains Mono',monospace}}
+  @media(max-width:600px){{.wrap{{padding:12px 10px}}body{{font-size:12px}}.hist-list{{gap:6px}}.hist-link{{font-size:11px;padding:5px 10px}}}}
 </style>
 </head>
 <body>
 {nav}
 <div class="wrap"><pre>{colorizar(texto)}</pre></div>
+{footer_links}
 </body>
 </html>'''
 
@@ -741,9 +765,21 @@ if __name__=='__main__':
     html_url_dated =f'{GITHUB_PAGES_URL}/results/reporte_{date_fn}.html'
     html_url_latest=f'{GITHUB_PAGES_URL}/results/reporte_latest.html'
 
+    # Ultimos 5 reportes existentes (para el footer)
+    import glob, re as _re
+    archivos_html = sorted(glob.glob('results/reporte_2*.html'), reverse=True)[:5]
+    reportes_anteriores = []
+    for f in archivos_html:
+        m = _re.search(r'reporte_(\d{8})_(\d{4})\.html', f)
+        if m:
+            d, t = m.group(1), m.group(2)
+            label = f'{d[6:8]}/{d[4:6]}/{d[:4]} {t[:2]}:{t[2:]}'
+            url   = f'{GITHUB_PAGES_URL}/results/reporte_{d}_{t}.html'
+            reportes_anteriores.append((label, url))
+
     # Generar HTML
-    html_dated =texto_a_html(reporte_txt, fecha_str, html_url_latest)
-    html_latest=texto_a_html(reporte_txt, fecha_str)  # sin nav en el latest
+    html_dated =texto_a_html(reporte_txt, fecha_str, html_url_latest, reportes_anteriores)
+    html_latest=texto_a_html(reporte_txt, fecha_str, reportes_anteriores=reportes_anteriores)
 
     with open(f'results/reporte_{date_fn}.html','w',encoding='utf-8') as f: f.write(html_dated)
     with open('results/reporte_latest.html',  'w',encoding='utf-8') as f: f.write(html_latest)
