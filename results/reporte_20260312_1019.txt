@@ -1,0 +1,235 @@
+=================================================================
+   SMC CONFLUENCE SCREENER — REPORTE DIARIO
+   12/03/2026 10:19 (ARG) — Swing Length: 50 (LuxAlgo)
+=================================================================
+  CCL: $1,455.70 pesos/USD  (fuente: DolarAPI)
+
+SECCION 1: CONTEXTO DE MERCADO
+-----------------------------------------------------------------
+  SPY (ultimos 5 dias): -0.73% (baja)
+
+  ROTACION SECTORIAL:
+  Sector                    ETF     Ret5d   RS/SPY  Capital
+  -------------------------------------------------------
+  Energy                    XLE    +0.89%    1.016  ENTRANDO [OK]
+  Technology                XLK    +0.18%    1.009  ENTRANDO [OK]
+  Healthcare                XLV    -0.69%    1.000  ENTRANDO [OK]
+  Consumer Defensive        XLP    -0.96%    0.998  saliendo [--]
+  Communication Services    XLC    -1.22%    0.995  saliendo [--]
+  Industrials               XLI    -1.49%    0.992  saliendo [--]
+  Basic Materials           XLB    -1.95%    0.988  saliendo [--]
+  Consumer Cyclical         XLY    -2.07%    0.987  saliendo [--]
+  Financial Services        XLF    -3.10%    0.976  saliendo [--]
+
+  CONCLUSION: Capital entrando en XLE, XLK, XLV
+  Operar preferentemente acciones de esos sectores hoy.
+
+=================================================================
+SECCION 2: CEDEARs — SENALES EN NYSE
+  (Operas el CEDEAR en pesos. CCL $1,456)
+-----------------------------------------------------------------
+
+  TIER 1 — Camino libre (4):
+
+  #1
+  TICKER: AMZN  |  Score: 3/7  |  Consumer Cyclical
+  ────────────────────────────────────────────────────────────
+  Precio:         $212.65
+  Zona SMC:       [*] Discount  (3.4% del rango)
+  Swing High:     $258.60   Swing Low: $211.03
+  Equilibrium:    $234.82  (iman +10.4%)
+  Estructura:     Alcista Debil
+  OB Encima:      NO
+  RS vs Sector:   0.992
+  RSI Diario:     46.9
+  Vol Ratio 20d:  0.62x
+  -- FVGs ACTIVOS --
+  Encima (resistencia):
+    [BEARISH] $213.82-$215.59 mid:$214.71 [+1.4%]
+    [BEARISH] $212.81-$220.38 mid:$216.60 [+3.6%]
+  Debajo (soporte):
+    [BULLISH] $209.73-$210.15 mid:$209.94 [-1.4%]
+    [BULLISH] $209.18-$215.59 mid:$212.38 [-1.6%]
+    [BULLISH] $208.43-$208.93 mid:$208.68 [-2.0%]
+  -- FIBONACCI --
+  [^] 23.6% Retroceso menor        $    241.69 [+13.7%]
+  [^] 38.2% POI moderado           $    236.32 [+11.1%]
+  [^] 50.0% Equilibrium            $    231.98 [+9.1%]
+  [^] 61.8% Golden Pocket          $    227.64 [+7.0%] [GP]
+  [^] 65.0% Golden Pocket ext.     $    226.46 [+6.5%] [GP]
+  [^] 78.6% Ultimo soporte         $    221.46 [+4.1%]
+  [T] 127.2% Extension 1           $    260.37 [+22.4%]
+  [T] 141.4% Extension 2           $    265.60 [+24.9%]
+  [T] 161.8% Extension dorada      $    273.10 [+28.4%]
+  -- TRADE --
+  Entrada: $212.65  |  Stop: $209.46 (-1.5%)  |  Target: $219.03 (+3.0%)
+  R/R: 2.0  |  TV: https://www.tradingview.com/chart/?symbol=NASDAQ%3AAMZN
+  -- EN PESOS (CCL $1,456 | ratio 144.0:1) --
+  Entrada: $       2,150 ARS  |  Stop: $       2,117  |  Target: $       2,214
+  ────────────────────────────────────────────────────────────
+
+
+  #2
+  TICKER: PLTR  |  Score: 3/7  |  Technology
+  ────────────────────────────────────────────────────────────
+  Precio:         $151.60
+  Zona SMC:       [*] Discount  (14.4% del rango)
+  Swing High:     $207.52   Swing Low: $142.22
+  Equilibrium:    $174.87  (iman +15.3%)
+  Estructura:     Alcista Debil
+  OB Encima:      NO
+  RS vs Sector:   0.991
+  RSI Diario:     54.4
+  Vol Ratio 20d:  0.61x
+  -- FVGs ACTIVOS --
+  Encima (resistencia):
+    [BEARISH] $137.98-$153.12 mid:$145.55 [+1.0%]
+    [BEARISH] $151.00-$157.24 mid:$154.12 [+3.7%]
+    [BEARISH] $157.63-$164.69 mid:$161.16 [+8.6%]
+  Debajo (soporte):
+    [BULLISH] $151.00-$153.12 mid:$152.06 [-0.4%]
+    [BULLISH] $147.50-$149.61 mid:$148.56 [-2.7%]
+    [BULLISH] $147.14-$148.06 mid:$147.60 [-2.9%]
+  -- FIBONACCI --
+  [^] 23.6% Retroceso menor        $    186.91 [+23.3%]
+  [^] 38.2% POI moderado           $    181.08 [+19.4%]
+  [^] 50.0% Equilibrium            $    176.36 [+16.3%]
+  [^] 61.8% Golden Pocket          $    171.64 [+13.2%] [GP]
+  [^] 65.0% Golden Pocket ext.     $    170.36 [+12.4%] [GP]
+  [^] 78.6% Ultimo soporte         $    164.93 [+8.8%]
+  [T] 127.2% Extension 1           $    207.22 [+36.7%]
+  [T] 141.4% Extension 2           $    212.90 [+40.4%]
+  [T] 161.8% Extension dorada      $    221.06 [+45.8%]
+  -- TRADE --
+  Entrada: $151.60  |  Stop: $149.33 (-1.5%)  |  Target: $156.15 (+3.0%)
+  R/R: 2.0  |  TV: https://www.tradingview.com/chart/?symbol=NASDAQ%3APLTR
+  -- EN PESOS (CCL $1,456 | ratio 3.0:1) --
+  Entrada: $      73,561 ARS  |  Stop: $      72,460  |  Target: $      75,769
+  ────────────────────────────────────────────────────────────
+
+
+  #3
+  TICKER: BITF  |  Score: 3/7  |  Financial Services
+  ────────────────────────────────────────────────────────────
+  Precio:         $2.24
+  Zona SMC:           Near Discount  (34.3% del rango)
+  Swing High:     $4.10   Swing Low: $1.27
+  Equilibrium:    $2.68  (iman +19.9%)
+  Estructura:     Alcista Debil
+  OB Encima:      NO
+  RS vs Sector:   1.041
+  RSI Diario:     50.6
+  Vol Ratio 20d:  1.25x
+  -- FVGs ACTIVOS --
+  Encima (resistencia):
+    [BEARISH] $2.24-$2.25 mid:$2.25 [+0.5%]
+    [BEARISH] $2.35-$2.40 mid:$2.38 [+7.1%]
+  Debajo (soporte):
+    [BULLISH] $2.21-$2.25 mid:$2.23 [-1.3%]
+    [BEARISH] $1.98-$2.18 mid:$2.08 [-2.7%]
+    [BULLISH] $2.12-$2.18 mid:$2.15 [-5.4%]
+  -- FIBONACCI --
+  [^] 23.6% Retroceso menor        $      3.15 [+40.6%]
+  [^] 38.2% POI moderado           $      2.94 [+31.2%]
+  [^] 50.0% Equilibrium            $      2.76 [+23.2%]
+  [^] 61.8% Golden Pocket          $      2.59 [+15.6%] [GP]
+  [^] 65.0% Golden Pocket ext.     $      2.55 [+13.8%] [GP]
+  [^] 78.6% Ultimo soporte         $      2.35 [+4.9%]
+  [T] 127.2% Extension 1           $      3.88 [+73.2%]
+  [T] 141.4% Extension 2           $      4.09 [+82.6%]
+  [T] 161.8% Extension dorada      $      4.39 [+96.0%]
+  -- TRADE --
+  Entrada: $2.24  |  Stop: $2.21 (-1.5%)  |  Target: $2.31 (+3.0%)
+  R/R: 2.0  |  TV: https://www.tradingview.com/chart/?symbol=NASDAQ%3ABITF
+  -- EN PESOS (CCL $1,456 | ratio 0.2:1) --
+  Entrada: $      16,304 ARS  |  Stop: $      16,085  |  Target: $      16,813
+  ────────────────────────────────────────────────────────────
+
+
+  #4
+  TICKER: META  |  Score: 3/7  |  Communication Services
+  ────────────────────────────────────────────────────────────
+  Precio:         $654.86
+  Zona SMC:           Near Discount  (35.5% del rango)
+  Swing High:     $789.62   Swing Low: $580.78
+  Equilibrium:    $685.20  (iman +4.6%)
+  Estructura:     Alcista Debil
+  OB Encima:      NO
+  RS vs Sector:   1.004
+  RSI Diario:     49.9
+  Vol Ratio 20d:  0.74x
+  -- FVGs ACTIVOS --
+  Encima (resistencia):
+    [BEARISH] $649.47-$657.67 mid:$653.57 [+0.4%]
+    [BEARISH] $681.50-$686.41 mid:$683.95 [+4.8%]
+    [BEARISH] $688.83-$703.52 mid:$696.18 [+7.4%]
+  Debajo (soporte):
+    [BULLISH] $647.75-$648.36 mid:$648.05 [-1.1%]
+    [BULLISH] $641.11-$647.50 mid:$644.30 [-2.1%]
+  -- FIBONACCI --
+  [^] 23.6% Retroceso menor        $    739.47 [+12.9%]
+  [^] 38.2% POI moderado           $    727.68 [+11.1%]
+  [^] 50.0% Equilibrium            $    718.14 [+9.7%]
+  [^] 61.8% Golden Pocket          $    708.61 [+8.2%] [GP]
+  [^] 65.0% Golden Pocket ext.     $    706.02 [+7.8%] [GP]
+  [^] 78.6% Ultimo soporte         $    695.03 [+6.1%]
+  [T] 127.2% Extension 1           $    780.52 [+19.2%]
+  [T] 141.4% Extension 2           $    791.99 [+20.9%]
+  [T] 161.8% Extension dorada      $    808.48 [+23.5%]
+  -- TRADE --
+  Entrada: $654.86  |  Stop: $645.04 (-1.5%)  |  Target: $674.51 (+3.0%)
+  R/R: 2.0  |  TV: https://www.tradingview.com/chart/?symbol=NASDAQ%3AMETA
+  -- EN PESOS (CCL $1,456 | ratio 24.0:1) --
+  Entrada: $      39,720 ARS  |  Stop: $      39,124  |  Target: $      40,912
+  ────────────────────────────────────────────────────────────
+
+
+=================================================================
+SECCION 3: ADRs ARGENTINOS
+-----------------------------------------------------------------
+
+  Sin senales en ADRs hoy.
+
+=================================================================
+SECCION 4: PANEL LIDER BYMA — EN PESOS
+-----------------------------------------------------------------
+
+  #1  COME.BA  (Soc. Comercial del Plata)
+  ────────────────────────────────────────────────────────────
+  Precio: $46.11 ARS  |  Zona: Near Discount  |  RSI: 49.3
+  Estructura: Alcista Debil  |  Score: 3/7
+  Equilibrium: $55.10 ARS (+19.5%)
+  Entrada: $46.11  Stop: $45.42  Target: $47.49
+  TV: https://www.tradingview.com/chart/?symbol=BYMA%3ACOME
+  ────────────────────────────────────────────────────────────
+
+  #2  TXAR.BA  (Ternium Argentina)
+  ────────────────────────────────────────────────────────────
+  Precio: $666.50 ARS  |  Zona: Near Discount  |  RSI: 50.7
+  Estructura: Alcista Debil  |  Score: 3/7
+  Equilibrium: $716.50 ARS (+7.5%)
+  Entrada: $666.50  Stop: $656.50  Target: $686.50
+  TV: https://www.tradingview.com/chart/?symbol=BYMA%3ATXAR
+  ────────────────────────────────────────────────────────────
+
+=================================================================
+SECCION 5: PLAN DEL DIA
+-----------------------------------------------------------------
+
+  HORARIOS (hora Argentina):
+  10:00       Apertura BYMA
+  11:30       Apertura NYSE
+  11:30-12:30 EVITAR — solapamiento Londres/NY
+  13:00-15:00 MEJOR VENTANA
+  17:00-18:00 EVITAR — cierre NY
+
+  PRIORIDADES HOY:
+  1. AMZN   | Score:3/7 | Discount | RSI:46.9 | $212.65
+  2. PLTR   | Score:3/7 | Discount | RSI:54.4 | $151.60
+  3. COME.BA | Score:3/7 | Near Discount | RSI:49.3 | $46.11
+
+  MAX/TRADE: 25% capital  |  STOP: -1.5%  |  TARGET: +3.0%  |  R/R: 2.0
+
+=================================================================
+  Generado: 12/03/2026 10:19 ARG  |  Swing:50  |  Score min:3
+=================================================================
