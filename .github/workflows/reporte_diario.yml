@@ -1,17 +1,16 @@
-name: SMC Reporte Diario - Argentina
+name: SMC Reporte Diario
 
 on:
   schedule:
-    # 7:00 AM Argentina (UTC-3) = 10:00 AM UTC
-    # Lunes a Viernes
-    - cron: '0 10 * * 1-5'
-  workflow_dispatch:  # permite correrlo manualmente
+    - cron: '0 10 * * 1-5'   # 7AM ARG (UTC-3), lunes a viernes
+  workflow_dispatch:           # manual desde Actions
+
+permissions:
+  contents: write              # necesario para hacer commit
 
 jobs:
-  scan:
+  reporte:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,13 +23,17 @@ jobs:
       - name: Instalar dependencias
         run: pip install yfinance pandas numpy requests
 
-      - name: Correr Reporte Diario
+      - name: Correr screener
+        env:
+          TELEGRAM_TOKEN:    ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID:  ${{ secrets.TELEGRAM_CHAT_ID }}
+          GITHUB_PAGES_URL:  https://javi-funes.github.io/smc-screener
         run: python scripts/reporte_diario.py
 
-      - name: Subir reporte como artefacto
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: reporte-diario-${{ github.run_number }}
-          path: results/
-          retention-days: 30
+      - name: Commit y push del reporte
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add results/
+          git diff --staged --quiet || git commit -m "reporte $(date +'%Y-%m-%d %H:%M') ARG"
+          git push
