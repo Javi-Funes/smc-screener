@@ -1,0 +1,15 @@
+ticker,score,zona,precio,ratio,precio_ars,rsi,estructura
+PLTR,4,Discount,152.77,3.0,74985.0,54.3,Alcista Debil
+IBM,3,Discount,251.6,15.0,24699.0,45.7,Alcista Debil
+TSLA,3,Near Discount,392.78,15.0,38558.0,42.0,Alcista Debil
+AMD,3,Near Discount,199.46,10.0,29370.0,46.5,Alcista Debil
+PAGS,3,Discount,9.63,3.0,4727.0,41.5,Alcista Debil
+BITF,3,Near Discount,2.32,0.2,17081.0,53.5,Alcista Debil
+SUPV,4,Discount,8.09,5.0,2383.0,34.1,Alcista Debil
+GGAL,4,Near Discount,42.02,10.0,6187.0,39.5,Alcista Debil
+LOMA,3,Discount,10.24,5.0,3016.0,43.2,Alcista Debil
+CVH.BA,4,Discount,6890.0,1.0,6890.0,42.0,Alcista Debil
+ALUA.BA,4,Discount,811.0,1.0,811.0,42.6,Alcista Debil
+MIRG.BA,3,Discount,18800.0,1.0,18800.0,41.0,Alcista Debil
+COME.BA,3,Discount,40.78,1.0,40.78,39.8,Alcista Debil
+TXAR.BA,3,Near Discount,640.0,1.0,640.0,46.9,Alcista Debil
