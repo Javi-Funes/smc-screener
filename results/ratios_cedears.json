@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "actualizado": "2026-03-22 11:15",
+    "actualizado": "2026-03-29 11:20",
     "total": 369,
     "comafi": 306,
     "cajavaloroes": 55
@@ -222,7 +222,7 @@
     "tipo": "Accion",
     "fuente": "CajaValores"
   },
-  "SI": {
+  "SICPQ": {
     "ratio": 10.0,
     "nombre": "",
     "byma": "SI",
