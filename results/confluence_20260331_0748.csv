@@ -1,0 +1,8 @@
+ticker,score,zona,precio,ratio,precio_ars,rsi,estructura
+AAPL,3,Discount,246.63,20.0,18316.0,35.6,Alcista Debil
+ANF,3,Near Discount,87.19,1.0,129503.0,43.2,Alcista Debil
+AMD,3,Near Discount,196.04,10.0,29118.0,44.7,Alcista Debil
+LOMA,3,Near Discount,10.46,5.0,3107.0,48.9,Alcista Debil
+SUPV,3,Near Discount,8.42,5.0,2501.0,42.8,Alcista Debil
+CVH.BA,3,Discount,7070.0,1.0,7070.0,49.3,Alcista Debil
+ALUA.BA,3,Near Discount,881.0,1.0,881.0,56.8,Alcista Debil
