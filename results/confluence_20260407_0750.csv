@@ -1,0 +1,5 @@
+ticker,score,zona,precio,ratio,precio_ars,rsi,estructura
+BAC,3,Discount,50.06,4.0,18555.0,57.0,Alcista Debil
+PLTR,3,Discount,147.93,3.0,73107.0,49.0,Alcista Debil
+BITF,3,Near Discount,2.16,0.2,16012.0,50.7,Alcista Debil
+CVH.BA,3,Near Discount,7290.0,1.0,7290.0,57.5,Alcista Debil
