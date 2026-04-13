@@ -1,0 +1,4 @@
+ticker,score,zona,precio,ratio,precio_ars,rsi,estructura
+META,3,Discount,629.86,24.0,38600.0,57.5,Alcista Debil
+BMA,3,Near Discount,80.1,10.0,11781.0,58.5,Alcista Debil
+CVH.BA,3,Near Discount,7320.0,1.0,7320.0,58.2,Alcista Debil
