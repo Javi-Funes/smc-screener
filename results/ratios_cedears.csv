@@ -57,7 +57,6 @@ BHP,BHP,2.0,BHP GROUP LTD,Accion,Comafi
 BIDU,BIDU,11.0,"BAIDU, INC.",Accion,Comafi
 BIIB,BIIB,13.0,BIOGEN INC.,Accion,Comafi
 BIOX,BIOX,1.0,BIOCERES CROP SOLUTIONS CORP,Accion,Comafi
-BITF,BITF,0.2,,Accion,CajaValores
 BK,BK,2.0,BANK OF NEW YORK MELLON CORP,Accion,Comafi
 BKNG,BKNG,700.0,BOOKING HOLDINGS INC.,Accion,Comafi
 BKR,BKR,7.0,BAKER HUGHES CO.,Accion,Comafi
@@ -104,6 +103,7 @@ EQNR,EQNR,6.0,EQUINOR ASA,Accion,Comafi
 ERIC,ERIC,2.0,LM ERICSSON TELEPHONE Co. ADR,Accion,Comafi
 ERJ,ERJ,1.0,EMBRAER-EMPRESA BRASILEIRA DE AERONÁUTICA S.A.,Accion,Comafi
 ETSY,ETSY,16.0,ETSY INC,Accion,Comafi
+EWY,EWY,50.0,,Accion,CajaValores
 F,F,1.0,,Accion,CajaValores
 FCX,FCX,3.0,FREEPORT MCMORAN INC.,Accion,Comafi
 FDX,FDX,10.0,FEDEX CORP,Accion,Comafi
@@ -143,6 +143,7 @@ IBB,IBB,27.0,iShares Nasdaq Biotechnology ETF,Accion,Comafi
 IBIT,IBIT,10.0,ISHARES BITCOIN TRUST,Accion,Comafi
 IBM,IBM,15.0,IBM Corp.,Accion,Comafi
 IBN,IBN,1.0,ICICI BANK LTD,Accion,Comafi
+ICLN,ICLN,5.0,,Accion,CajaValores
 IEUR,IEUR,11.0,iShares Core MSCI Europe ETF,Accion,Comafi
 IFF,IFF,12.0,INTERNATIONAL FLAVORS & FRAGRANCE INC.,Accion,Comafi
 INFY,INFY,1.0,INFOSYS LIMITED,Accion,Comafi
@@ -159,6 +160,7 @@ JMIA,JMIA,1.0,,Accion,CajaValores
 JNJ,JNJ,15.0,JOHNSON & JOHNSON,Accion,Comafi
 JPM,JPM,15.0,J.P. MORGAN & CHASE Co.,Accion,Comafi
 KB,KB,2.0,KB FINANCIAL GROUP INC.,Accion,Comafi
+KEEL,KEEL,0.2,,Accion,CajaValores
 KEP,KEP,1.0,KOREA ELECTRIC POWER CORP.,Accion,Comafi
 KGC,KGC,1.0,KINROSS GOLD CORP.,Accion,Comafi
 KMB,KMB,6.0,KIMBERLY CLARK CORPORATION,Accion,Comafi
@@ -241,6 +243,7 @@ RIO,RIO,8.0,RIO TINTO PLC - ADR,Accion,Comafi
 RIOT,RIOT,3.0,RIOT PLATFORMS INC.,Accion,Comafi
 ROKU,ROKU,13.0,ROKU INC.,Accion,Comafi
 ROST,ROST,4.0,"ROSS STORES, INC.",Accion,Comafi
+RSP,RSP,30.0,,Accion,CajaValores
 RTX,RTX,5.0,RTX CORPORATION,Accion,Comafi
 SAN,SAN,0.25,BANCO SANTANDER  S.A. (ADR),Accion,Comafi
 SAP,SAP,6.0,SAP SE,Accion,Comafi
@@ -321,6 +324,7 @@ XLP,XLP,16.0,The Consumer Staples Select Sector SPDR Fund,Accion,Comafi
 XLRE,XLRE,9.0,The Real Estate Select Sector SPDR Fund,Accion,Comafi
 XLV,XLV,29.0,The Health Care Select Sector SPDR Fund,Accion,Comafi
 XLY,XLY,43.0,The Consumer Discretionary Select Sector SPDR Fund,Accion,Comafi
+XME,XME,30.0,,Accion,CajaValores
 XOM,XOM,10.0,EXXON MOBIL CORPORATION,Accion,Comafi
 XP,XP,4.0,XP INC,Accion,Comafi
 XRX,XRX,1.0,XEROX HOLDING CORPORATION,Accion,Comafi

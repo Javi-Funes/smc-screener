@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "actualizado": "2026-04-12 11:26",
-    "total": 369,
+    "actualizado": "2026-04-19 11:27",
+    "total": 373,
     "comafi": 306,
-    "cajavaloroes": 55
+    "cajavaloroes": 59
   },
   "SPY": {
     "ratio": 20.0,
@@ -145,6 +145,34 @@
     "tipo": "ETF",
     "fuente": "CajaValores"
   },
+  "ICLN": {
+    "ratio": 5.0,
+    "nombre": "",
+    "byma": "ICLN",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "EWY": {
+    "ratio": 50.0,
+    "nombre": "",
+    "byma": "EWY",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "XME": {
+    "ratio": 30.0,
+    "nombre": "",
+    "byma": "XME",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
+  "RSP": {
+    "ratio": 30.0,
+    "nombre": "",
+    "byma": "RSP",
+    "tipo": "Accion",
+    "fuente": "CajaValores"
+  },
   "F": {
     "ratio": 1.0,
     "nombre": "",
@@ -229,10 +257,10 @@
     "tipo": "Accion",
     "fuente": "CajaValores"
   },
-  "BITF": {
+  "KEEL": {
     "ratio": 0.2,
     "nombre": "",
-    "byma": "BITF",
+    "byma": "KEEL",
     "tipo": "Accion",
     "fuente": "CajaValores"
   },
