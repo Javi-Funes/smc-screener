@@ -1,0 +1,9 @@
+ticker,score,zona,precio,ratio,precio_ars,rsi,estructura
+HMY,3,Discount,17.25,1.0,25287.0,52.3,Alcista Debil
+IBM,3,Discount,255.68,15.0,24987.0,58.5,Alcista Debil
+NU,3,Discount,15.05,2.0,11031.0,53.0,Alcista Debil
+STNE,3,Discount,15.47,3.0,7559.0,60.4,Alcista Debil
+SLV,3,Discount,68.49,1.0,100399.0,47.4,Alcista Debil
+ASTS,3,Near Discount,80.01,1.0,117287.0,42.6,Alcista Debil
+PLTR,3,Discount,145.97,3.0,71326.0,51.8,Alcista Debil
+BMA,3,Near Discount,80.95,10.0,11866.0,57.3,Alcista Debil
