@@ -1,0 +1,5 @@
+ticker,score,zona,precio,ratio,precio_ars,rsi,estructura
+GOLD,3,Discount,40.56,2.0,29976.0,36.1,Alcista Debil
+ETHA,3,Near Discount,17.36,5.0,5132.0,51.2,Alcista Debil
+ASTS,3,Near Discount,83.01,1.0,122697.0,53.5,Alcista Debil
+BMA,3,Discount,71.78,10.0,10610.0,43.9,Alcista Debil
