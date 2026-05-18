@@ -1,0 +1,8 @@
+ticker,score,zona,precio,ratio,precio_ars,rsi,estructura
+GOLD,3,Discount,39.04,2.0,28989.0,33.2,Alcista Debil
+ETHA,3,Near Discount,16.07,5.0,4773.0,39.3,Alcista Debil
+BAC,3,Discount,50.15,4.0,18619.0,40.7,Alcista Debil
+META,3,Discount,606.05,24.0,37502.0,42.8,Alcista Debil
+URA,3,Near Discount,49.45,5.0,14688.0,40.0,Alcista Debil
+SUPV,3,Discount,7.48,5.0,2222.0,35.6,Alcista Debil
+CEPU,3,Near Discount,13.81,10.0,2051.0,39.5,Alcista Debil
