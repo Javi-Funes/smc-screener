@@ -1,0 +1,9 @@
+ticker,score,zona,precio,ratio,precio_ars,rsi,estructura
+PAGS,3,Discount,9.32,3.0,4625.0,44.1,Alcista Debil
+SLV,3,Discount,68.73,1.0,102325.0,46.8,Alcista Debil
+ANF,3,Discount,74.73,1.0,111258.0,37.5,Alcista Debil
+GOLD,3,Discount,41.01,2.0,30528.0,43.0,Alcista Debil
+ETHA,3,Near Discount,16.14,5.0,4806.0,40.8,Alcista Debil
+BAC,3,Discount,51.23,4.0,19068.0,48.7,Alcista Debil
+BMA,3,Discount,72.11,10.0,10736.0,47.9,Alcista Debil
+CRES.BA,3,Discount,1611.0,1.0,1611.0,44.6,Alcista Debil
