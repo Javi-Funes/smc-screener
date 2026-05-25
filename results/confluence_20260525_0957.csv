@@ -1,0 +1,9 @@
+ticker,score,zona,precio,ratio,precio_ars,rsi,estructura
+ANF,4,Near Discount,77.26,1.0,114855.0,43.9,Alcista Debil
+HMY,3,Discount,16.76,1.0,24915.0,49.9,Alcista Debil
+SLV,3,Discount,68.36,1.0,101624.0,46.2,Alcista Debil
+GOLD,3,Near Discount,43.4,2.0,32259.0,52.1,Alcista Debil
+SUPV,3,Near Discount,7.93,5.0,2358.0,45.5,Alcista Debil
+BMA,3,Discount,75.95,10.0,11291.0,53.9,Alcista Debil
+CRES.BA,3,Discount,1646.0,1.0,1646.0,49.0,Alcista Debil
+EDN.BA,3,Near Discount,1802.0,1.0,1802.0,46.0,Alcista Debil
