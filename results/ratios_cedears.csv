@@ -137,7 +137,7 @@ HON,HON,8.0,HONEYWELL INTERNATIONAL INC. (ex Allied S.),Accion,Comafi
 HPQ,HPQ,1.0,HP Inc,Accion,Comafi
 HSBC,HSBC,2.0,HSBC HOLDINGS plc ADR,Accion,Comafi
 HSY,HSY,21.0,THE HERSHEY COMPANY,Accion,Comafi
-HUT,HUT,0.2,,Accion,CajaValores
+HUT,HUT,5.0,,Accion,CajaValores
 HWM,HWM,1.0,HOWMET AEROSPACE INC,Accion,Comafi
 IBB,IBB,27.0,iShares Nasdaq Biotechnology ETF,Accion,Comafi
 IBIT,IBIT,10.0,ISHARES BITCOIN TRUST,Accion,Comafi
@@ -365,7 +365,7 @@ QQQ,QQQ,20.0,,ETF,CajaValores
 SH,SH,8.0,,ETF,CajaValores
 SMH,SMH,50.0,,ETF,CajaValores
 SPXL,SPXL,25.0,,ETF,CajaValores
-SPY,SPY,20.0,,ETF,CajaValores
+SPY,SPY,60.0,,ETF,CajaValores
 TQQQ,TQQQ,25.0,,ETF,CajaValores
 URA,URA,5.0,,ETF,CajaValores
 VXX,VXX,5.0,,ETF,CajaValores

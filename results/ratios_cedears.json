@@ -1,12 +1,12 @@
 {
   "_meta": {
-    "actualizado": "2026-05-24 11:57",
+    "actualizado": "2026-05-31 12:05",
     "total": 373,
     "comafi": 306,
     "cajavaloroes": 59
   },
   "SPY": {
-    "ratio": 20.0,
+    "ratio": 60.0,
     "nombre": "",
     "byma": "SPY",
     "tipo": "ETF",
@@ -265,7 +265,7 @@
     "fuente": "CajaValores"
   },
   "HUT": {
-    "ratio": 0.2,
+    "ratio": 5.0,
     "nombre": "",
     "byma": "HUT",
     "tipo": "Accion",
