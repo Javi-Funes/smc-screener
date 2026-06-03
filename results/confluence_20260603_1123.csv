@@ -1,0 +1,6 @@
+ticker,score,zona,precio,ratio,precio_ars,rsi,estructura
+ANF,4,Discount,74.91,1.0,112867.0,42.5,Alcista Debil
+SLV,3,Discount,66.58,1.0,100316.0,43.2,Alcista Debil
+GLD,3,Discount,408.25,50.0,12302.0,39.0,Alcista Debil
+GOLD,3,Discount,39.12,2.0,29471.0,38.3,Alcista Debil
+COIN,3,Near Discount,168.63,27.0,9410.0,39.0,Alcista Debil
