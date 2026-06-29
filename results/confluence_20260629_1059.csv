@@ -1,0 +1,8 @@
+ticker,score,zona,precio,ratio,precio_ars,rsi,estructura
+URA,4,Discount,43.67,5.0,13464.0,37.9,Alcista Debil
+PAGS,3,Discount,9.12,3.0,4686.0,52.6,Alcista Debil
+META,3,Discount,566.65,24.0,36398.0,44.1,Alcista Debil
+EWZ,3,Discount,34.6,2.0,26670.0,46.5,Alcista Debil
+HMY,3,Near Discount,15.27,1.0,23540.0,43.8,Alcista Debil
+MSFT,3,Discount,379.33,30.0,19493.0,43.6,Alcista Debil
+ASTS,3,Near Discount,78.05,1.0,120322.0,45.6,Alcista Debil
